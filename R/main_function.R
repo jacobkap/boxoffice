@@ -1,3 +1,10 @@
+#' import lubridate
+#' import foreach
+#' import rvest
+
+#' globalVariables("i")
+
+
 
 #' Download Information on Box Office Results for Movies
 #'

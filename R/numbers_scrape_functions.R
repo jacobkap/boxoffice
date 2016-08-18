@@ -1,4 +1,3 @@
-
 # Scrapes single date from the-numbers.com
 numbers_single_date <- function(date, number_of_results = NULL,
                                 verbose = FALSE){
@@ -130,7 +129,7 @@ numbers_multiple_dates <- function(dates, number_of_results = NULL,
 
 
     if (verbose){
-      message(paste(dates$dates[i], " ",
+      message(paste(ymd(dates$dates[i]), " ",
                     round((i / nrow(dates)) * 100, digits = 3),
                     "%",
                     " completed", sep = ""))

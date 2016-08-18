@@ -2,7 +2,11 @@
 % Please edit documentation in R/main_function.R
 \name{boxoffice}
 \alias{boxoffice}
-\title{Download Information on Box Office Results for Movies}
+\title{import lubridate
+import foreach
+import rvest
+globalVariables("i")
+Download Information on Box Office Results for Movies}
 \usage{
 boxoffice(start_date, end_date = NULL, number_of_results = NULL,
   source = "mojo", verbose = FALSE)
@@ -28,6 +32,10 @@ Data frame returning info on the name of the movie, its daily gross,
  gross-to-date, and gross-per-theater for each date inputted.
 }
 \description{
+import lubridate
+import foreach
+import rvest
+globalVariables("i")
 Download Information on Box Office Results for Movies
 }
 \examples{
