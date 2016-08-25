@@ -2,11 +2,7 @@
 % Please edit documentation in R/main_function.R
 \name{boxoffice}
 \alias{boxoffice}
-\title{import lubridate
-import foreach
-import rvest
-globalVariables("i")
-Download Information on Box Office Results for Movies}
+\title{Download Information on Box Office Results for Movies}
 \usage{
 boxoffice(start_date, end_date = NULL, number_of_results = NULL,
   source = "mojo", verbose = FALSE)
@@ -32,10 +28,6 @@ Data frame returning info on the name of the movie, its daily gross,
  gross-to-date, and gross-per-theater for each date inputted.
 }
 \description{
-import lubridate
-import foreach
-import rvest
-globalVariables("i")
 Download Information on Box Office Results for Movies
 }
 \examples{
@@ -65,5 +57,6 @@ number_of_results = 10, source = "numbers")}
 
 # Multiple dates with the-numbers as source
 \dontrun{boxoffice(c("12-10-10", "13-4-15"), source = "numbers")}
+
 }
 

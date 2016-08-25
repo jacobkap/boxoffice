@@ -7,11 +7,11 @@ Description: Download daily box office information (how much each movie earned
     in theaters) using data from either Box Office Mojo (<http://www.boxofficemojo.com/>) or
    The Numbers (<http://www.the-numbers.com/>).
 Depends:
+Imports:
+    lubridate,
     rvest,
     foreach,
-    lubridate,
     xml2
-Imports:
 License: GPL
 Encoding: UTF-8
 LazyData: true

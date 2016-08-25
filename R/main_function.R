@@ -1,10 +1,5 @@
-#' import lubridate
-#' import foreach
-#' import rvest
 
-#' globalVariables("i")
-
-
+globalVariables("i")
 
 #' Download Information on Box Office Results for Movies
 #'
@@ -28,6 +23,7 @@
 #' Data frame returning info on the name of the movie, its daily gross,
 #'  gross-to-date, and gross-per-theater for each date inputted.
 #' @export
+#'
 #' @examples
 #' # This will give you all movies from October 10th
 #' # 2012 from the-numbers.com
@@ -55,6 +51,11 @@
 #'
 #' # Multiple dates with the-numbers as source
 #' \dontrun{boxoffice(c("12-10-10", "13-4-15"), source = "numbers")}
+#'
+#' @import lubridate
+#' @import rvest
+#' @import foreach
+#' @import xml2
 
 
 
