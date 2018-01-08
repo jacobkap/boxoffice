@@ -20,7 +20,7 @@
 #'                       #  for yesterday
 #'
 #' # Uses the dates of Christmas and New Years Eve 2017
-#' boxoffice(dates = as.Date("2017-12-25", "2017-12-31"))
+#' boxoffice(dates = as.Date(c("2017-12-25", "2017-12-31")))
 #'
 #' @export
 boxoffice <- function(dates = Sys.Date() - 1,
