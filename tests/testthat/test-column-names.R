@@ -15,8 +15,6 @@ test_that("columns have right names", {
   expect_named(boxoffice(dates = christmas), col_names)
   expect_named(boxoffice(dates = christmas, top_n = 10), col_names)
   expect_named(boxoffice(dates = christmas, site = "numbers"), col_names)
-  expect_named(boxoffice(dates = christmas, site = "numbers", top_n = 10), col_names)
+  expect_named(boxoffice(dates = christmas, site = "numbers",
+                         top_n = 10), col_names)
 })
-
-
-

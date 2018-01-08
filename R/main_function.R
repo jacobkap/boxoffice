@@ -11,9 +11,19 @@
 #' Data frame returning info on the name of the movie, its daily gross,
 #'  gross-to-date, and gross-per-theater for each date inputted.
 #' @examples
+#' # Defaults to yesterday's data and from the website boxofficemojo.com.
 #' boxoffice()
+#'
+#' boxoffice(site = "numbers") # Uses the-numbers.com website.
+#'
+#' boxoffice(top_n = 10) # Returns only top 10 (daily) grossing movies
+#'                       #  for yesterday
+#'
+#' # Uses the dates of Christmas and New Years Eve 2017
+#' boxoffice(dates = as.Date("2017-12-25", "2017-12-31"))
+#'
 #' @export
-boxoffice <- function(dates = Sys.Date()-1,
+boxoffice <- function(dates = Sys.Date() - 1,
                       site = "mojo",
                       top_n = NULL) {
 
@@ -28,8 +38,8 @@ boxoffice <- function(dates = Sys.Date()-1,
     stop("site input must be either 'mojo' or 'numbers'")
   }
 
-  if ((!is.null(top_n) && length(top_n) != 1) ||
-      (!is.null(top_n) && top_n <= 0)) {
+  if ( (!is.null(top_n) && length(top_n) != 1) ||
+      (!is.null(top_n) && top_n <= 0) ) {
     stop("top_n must be a single, positive number.")
   }
 
@@ -56,7 +66,7 @@ boxoffice <- function(dates = Sys.Date()-1,
 
     if (!is.null(top_n)) {
       top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
-      page <- page[1:top_n,]
+      page <- page[1:top_n, ]
     }
 
     results[[i]] <- page

@@ -22,12 +22,12 @@ numeric_cleaner <- function(x) {
 mojo_site <- function(page){
   page <- rvest::html_nodes(page, "center td tr+ tr td~ td+ td")
   page <- rvest::html_text(page)
-  dim(page) <- c(9, length(page)/9)
+  dim(page) <- c(9, length(page) / 9)
   page <- t(page)
   page <- data.frame(page, stringsAsFactors = FALSE)
 
   names(page) <- c("movie", "distributor", "gross",
-                   "percent_change", 'remove', "theaters",
+                   "percent_change", "remove", "theaters",
                    "per_theater", "total_gross", "days")
   page$remove <- NULL
   return(page)
@@ -40,4 +40,3 @@ numbers_site <- function(page){
   page <- page[[1]]
   return(page)
 }
-

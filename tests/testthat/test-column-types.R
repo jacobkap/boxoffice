@@ -10,12 +10,16 @@ test_that("column types are correct", {
   expect_true(all(lapply(boxoffice(site = "numbers"), class) == col_types))
 
   expect_true(all(lapply(boxoffice(top_n = 10), class) == col_types))
-  expect_true(all(lapply(boxoffice(site = "numbers", top_n = 10), class) == col_types))
+  expect_true(all(lapply(boxoffice(site = "numbers",
+                                   top_n = 10), class) == col_types))
 
 
   expect_true(all(lapply(boxoffice(dates = christmas), class) == col_types))
-  expect_true(all(lapply(boxoffice(dates = christmas, site = "numbers"), class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = christmas,
+                                   site = "numbers"), class) == col_types))
 
-  expect_true(all(lapply(boxoffice(dates = christmas, top_n = 10), class) == col_types))
-  expect_true(all(lapply(boxoffice(dates = christmas, site = "numbers", top_n = 10), class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = christmas,
+                                   top_n = 10), class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = christmas, site = "numbers",
+                                   top_n = 10), class) == col_types))
 })

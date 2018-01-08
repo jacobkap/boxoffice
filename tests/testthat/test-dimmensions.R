@@ -12,5 +12,6 @@ test_that("returns proper number of rows and columns", {
   expect_equal(ncol(boxoffice(dates = christmas)), 9)
   expect_equal(ncol(boxoffice(dates = christmas, site = "numbers")), 9)
   expect_equal(dim(boxoffice(dates = christmas, top_n = 10)), c(20, 9))
-  expect_equal(dim(boxoffice(dates = christmas, site = "numbers", top_n = 10)), c(20, 9))
+  expect_equal(dim(boxoffice(dates = christmas,
+                             site = "numbers", top_n = 10)), c(20, 9))
 })

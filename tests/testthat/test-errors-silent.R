@@ -25,7 +25,7 @@ test_that("wrong inputs cause error - site", {
   expect_error(boxoffice(site = NA))
   expect_error(boxoffice(site = 1))
   expect_error(boxoffice(site = 1:10))
-  expect_error(boxoffice(site = '1:10'))
+  expect_error(boxoffice(site = "1:10"))
   expect_error(boxoffice(site = boxoffice()))
   expect_error(boxoffice(site = boxoffice))
   expect_error(boxoffice(site = c("mojo", "numbers")))
