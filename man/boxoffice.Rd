@@ -7,7 +7,13 @@
 boxoffice(dates = Sys.Date() - 1, site = "mojo", top_n = NULL)
 }
 \arguments{
+\item{dates}{A vector of dates to scrape}
+
 \item{site}{Whether you want to get data from boxofficemojo.com or the-numbers.com.}
+
+\item{top_n}{The number of results to return for each day. If NULL (default) returns
+all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
+movies per date).}
 }
 \value{
 Data frame returning info on the name of the movie, its daily gross,

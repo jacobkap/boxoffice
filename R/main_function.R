@@ -1,6 +1,12 @@
 #' Download Information on Box Office Results for Movies
+#' @param dates
+#' A vector of dates to scrape
 #' @param site
 #' Whether you want to get data from boxofficemojo.com or the-numbers.com.
+#' @param top_n
+#' The number of results to return for each day. If NULL (default) returns
+#' all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
+#' movies per date).
 #' @return
 #' Data frame returning info on the name of the movie, its daily gross,
 #'  gross-to-date, and gross-per-theater for each date inputted.
@@ -11,7 +17,8 @@ boxoffice <- function(dates = Sys.Date()-1,
                       site = "mojo",
                       top_n = NULL) {
 
-  stopifnot(is(dates, "Date") || is.atomic(dates))
+  stopifnot(length(site) == 1 && methods::is(dates, "Date") && is.atomic(dates))
+  stopifnot(is.null(top_n) || is.numeric(top_n))
 
   if (any(dates >= (Sys.Date()))) {
     stop("Yesterday's data is latest available. Please choose another date")
@@ -48,7 +55,7 @@ boxoffice <- function(dates = Sys.Date()-1,
     page$date <- dates[i]
 
     if (!is.null(top_n)) {
-      top_n <- ifelse(top_n > nrow(page), nrow_page, top_n)
+      top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
       page <- page[1:top_n,]
     }
 
