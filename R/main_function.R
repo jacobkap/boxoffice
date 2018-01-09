@@ -23,7 +23,7 @@
 #' boxoffice(dates = as.Date(c("2017-12-25", "2017-12-31")))
 #'
 #' @export
-boxoffice <- function(dates = Sys.Date() - 1,
+boxoffice <- function(dates = as.Date("2017-12-25"),
                       site = "mojo",
                       top_n = NULL) {
 
