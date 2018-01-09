@@ -11,19 +11,18 @@
 #' Data frame returning info on the name of the movie, its daily gross,
 #'  gross-to-date, and gross-per-theater for each date inputted.
 #' @examples
-#' # Defaults to yesterday's data and from the website boxofficemojo.com.
-#' boxoffice()
+#' boxoffice(dates = as.Date("2017-12-25"))
 #'
-#' boxoffice(site = "numbers") # Uses the-numbers.com website.
+#' # Uses the-numbers.com website.
+#' boxoffice(dates = as.Date("2017-12-25"), site = "numbers")
 #'
-#' boxoffice(top_n = 10) # Returns only top 10 (daily) grossing movies
-#'                       #  for yesterday
-#'
+#' # Returns only top 10 (daily) grossing movies#'
+#' boxoffice(dates = as.Date("2017-12-25"), top_n = 10)
 #' # Uses the dates of Christmas and New Years Eve 2017
 #' boxoffice(dates = as.Date(c("2017-12-25", "2017-12-31")))
 #'
 #' @export
-boxoffice <- function(dates = as.Date("2017-12-25"),
+boxoffice <- function(dates,
                       site = "mojo",
                       top_n = NULL) {
 

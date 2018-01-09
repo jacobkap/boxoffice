@@ -6,11 +6,15 @@ col_types <- c("character", "character", "numeric",
 christmas <- as.Date(c("2012-12-25", "2013-12-25"))
 
 test_that("column types are correct", {
-  expect_true(all(lapply(boxoffice(), class) == col_types))
-  expect_true(all(lapply(boxoffice(site = "numbers"), class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = as.Date("2017-12-25")),
+                         class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = as.Date("2017-12-25"),
+                                   site = "numbers"), class) == col_types))
 
-  expect_true(all(lapply(boxoffice(top_n = 10), class) == col_types))
-  expect_true(all(lapply(boxoffice(site = "numbers",
+  expect_true(all(lapply(boxoffice(dates = as.Date("2017-12-25"),
+                                   top_n = 10), class) == col_types))
+  expect_true(all(lapply(boxoffice(dates = as.Date("2017-12-25"),
+                                   site = "numbers",
                                    top_n = 10), class) == col_types))
 
 
