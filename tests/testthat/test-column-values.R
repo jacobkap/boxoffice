@@ -1,92 +1,100 @@
 context("column-values")
 
-jan_6 <- boxoffice::boxoffice(dates = as.Date("2018-01-06"))
-jan_6_num <- boxoffice::boxoffice(dates = as.Date("2018-01-06"),
+christmas <- boxoffice::boxoffice(dates = as.Date("2017-12-25"))
+christmas_num <- boxoffice::boxoffice(dates = as.Date("2017-12-25"),
                                   site = "numbers")
 
 test_that("proper dimmensions", {
-  expect_equal(dim(jan_6), c(32, 9))
-  expect_equal(dim(jan_6_num), c(23, 9))
+  expect_equal(dim(christmas), c(59, 9))
+  expect_equal(dim(christmas_num), c(42, 9))
 })
 
 
 test_that("numeric columns are accurate", {
-  expect_equal(jan_6$gross[c(1:5, 28:32)], c(15925000, 11026000, 10529000,
-                                             4860000, 4448000, 26837,
-                                             2604, 2301, 2074, 678))
-  expect_equal(jan_6$percent_change[c(1:5, 28:32)], c(47, -13, 60, 16, 34,
-                                                      78, 130, 50, 62, 70))
-  expect_equal(jan_6$theaters[c(1:5, 28:32)], c(3801, 3116, 4232, 3342, 3458,
-                                                37, 2, 41, 8, 5))
-  expect_equal(jan_6$per_theater[c(1:5, 28:32)], c(4190, 3539, 2488, 1454, 1286,
-                                                   725, 1302, 56, 259, 136))
-  expect_equal(jan_6$total_gross[c(1:5, 28:32)], c(235107666, 23752000,
-                                                   566075602, 72139372,
-                                                   83538090, 5391630,
-                                                   3735, 9479112, 136644,
-                                                   93932))
-  expect_equal(jan_6$days[c(1:5, 28:32)], c(18, 2, 23, 18, 16,
-                                            93, 2, 86, 58, 79))
+  expect_equal(christmas$gross[c(1:5, 55:59)], c(27459557, 19138553,
+                                                 6496365, 5604273,
+                                                 2805466, 483, 177,
+                                                 160, 141, 117))
+  expect_equal(christmas$percent_change[c(1:5, 55:59)], c(56, 112, 147,
+                                                          162, 113, NA,
+                                                          NA, -36, NA, -25))
+  expect_equal(christmas$theaters[c(1:5, 55:59)], c(4232, 3765, 3447,
+                                                    3006, 2111, 8, 2,
+                                                    1, 3, 1))
+  expect_equal(christmas$per_theater[c(1:5, 55:59)], c(6489, 5083, 1885,
+                                                       1864, 1329, 60, 89,
+                                                       160, 47, 117))
+  expect_equal(christmas$total_gross[c(1:5, 55:59)], c(395627411, 71913848,
+                                                       26424890, 19008847,
+                                                       164307743, 563231,
+                                                       51772, 92117,
+                                                       9238, 12620))
+  expect_equal(christmas$days[c(1:5, 55:59)], c(11, 6, 4, 6, 34, 60,
+                                                69, 67, 11, 11))
 
-  expect_equal(jan_6_num$gross[c(1:5, 19:23)], c(15925000, 11026000, 10529000,
-                                                 5860000, 4448000,
-                                                 2604, 2301, 2074, 678, 18))
-  expect_equal(jan_6_num$percent_change[c(1:5, 19:23)], c(47, -13, 60, 40, 33,
-                                                          130, 50, 62, 70, -40))
-  expect_equal(jan_6_num$theaters[c(1:5, 19:23)], c(3801, 3116, 4232, 3342,
-                                                    3458, 2, 41, 8, 5, 2))
-  expect_equal(jan_6_num$per_theater[c(1:5, 19:23)], c(4190, 3539, 2488, 1753,
-                                                       1286, 1302, 56, 259,
-                                                       136, 9))
-  expect_equal(jan_6_num$total_gross[c(1:5, 19:23)], c(235107666, 23752000,
-                                                       566075602, 73139372,
-                                                       83538090, 3735,
-                                                       9479112, 136644,
-                                                       93932, 7212708))
-  expect_equal(jan_6_num$days[c(1:5, 19:23)], c(30, 2, 23, 18, 16,
-                                                2, 86, 58, 79, 72))
+
+  expect_equal(christmas_num$gross[c(1:5, 38:42)], c(27459557, 19138553,
+                                                     6496365, 5604273,
+                                                     2805466, 736, 602,
+                                                     593, 160, 117))
+  expect_equal(christmas_num$percent_change[c(1:5, 38:42)], c(56, 111, 147,
+                                                              162, 113, 1, 3,
+                                                              56, -35, -25))
+  expect_equal(christmas_num$theaters[c(1:5, 38:42)], c(4232, 3765, 3447, 3006,
+                                                        2111, 8, 8, 9, 1, 1))
+  expect_equal(christmas_num$per_theater[c(1:5, 38:42)], c(6489, 5083, 1885,
+                                                           1864, 1329, 92, 75,
+                                                           66, 160, 117))
+  expect_equal(christmas_num$total_gross[c(1:5, 38:42)], c(395627411, 71913848,
+                                                           26424890, 19008847,
+                                                           164307743, 7205484,
+                                                           2289084, 127398,
+                                                           92117, 12620))
+  expect_equal(christmas_num$days[c(1:5, 38:42)], c(11, 6, 4, 6, 34, 60,
+                                                    67, 46, 67, 11))
 })
 
 test_that("categorical columns are accurate", {
-  expect_equal(jan_6$movie[c(1:5, 28:32)], c("Jumanji: Welcome to the Jungle",
-                                             "Insidious: The Last Key",
-                                             "Star Wars: The Last Jedi",
-                                             "The Greatest Showman",
+  expect_equal(christmas$movie[c(1:5, 55:59)], c("Star Wars: The Last Jedi",
+                                             "Jumanji: Welcome to the Jungle",
                                              "Pitch Perfect 3",
-                                             "The Florida Project",
-                                             "In Between",
-                                             "Marshall",
-                                             "Thelma",
-                                             "BPM (Beats Per Minute)"))
-  expect_equal(jan_6$distributor[c(1:5, 28:32)], c("Sony", "Uni.", "BV", "Fox",
-                                                   "Uni.", "A24", "FM", "ORF",
-                                                   "Orch.", "Orch."))
+                                             "The Greatest Showman",
+                                             "Coco",
+                                             "Novitiate",
+                                             "The Paris Opera",
+                                             "BPM (Beats Per Minute)",
+                                             "Permanent",
+                                             "Birdboy: The Forgotten Children"))
+  expect_equal(christmas$distributor[c(1:5, 55:59)], c("BV", "Sony", "Uni.",
+                                                       "Fox", "BV", "SPC",
+                                                       "FM", "Orch.", "Magn.",
+                                                       "GK"))
 
-  expect_equal(jan_6_num$movie[c(1:5, 19:23)],
-               c("Jumanji: Welcome to the Jungle",
-                 "Insidious: The Last Key",
-                 "Star Wars Ep. VIII: The Las…",
-                 "The Greatest Showman",
+  expect_equal(christmas_num$movie[c(1:5, 38:42)],
+               c("Star Wars Ep. VIII: The Las…",
+                 "Jumanji: Welcome to the Jungle",
                  "Pitch Perfect 3",
-                 "In Between",
-                 "Marshall",
+                 "The Greatest Showman",
+                 "Coco",
+                 "Let There Be Light",
+                 "The Killing of a Sacred Deer",
                  "Thelma",
                  "BPM (Beats per Minute)",
-                 "Let There Be Light"))
-  expect_equal(jan_6_num$distributor[c(1:5, 19:23)], c("Sony Pictures",
+                 "Birdboy: The Forgotten Chil…"))
+  expect_equal(christmas_num$distributor[c(1:5, 38:42)], c("Walt Disney",
+                                                       "Sony Pictures",
                                                        "Universal",
-                                                       "Walt Disney",
                                                        "20th Century Fox",
-                                                       "Universal",
-                                                       "Film Movement",
-                                                       "Open Road",
+                                                       "Walt Disney",
+                                                       "Atlas Distribution",
+                                                       "A24",
                                                        "The Orchard",
                                                        "The Orchard",
-                                                       "Atlas Distribution"))
+                                                       "GKIDS"))
 })
 
 
 test_that("Date column is accurate", {
-  expect_equal(unique(jan_6$date), as.Date("2018-01-06"))
-  expect_equal(unique(jan_6_num$date), as.Date("2018-01-06"))
+  expect_equal(unique(christmas$date), as.Date("2017-12-25"))
+  expect_equal(unique(christmas_num$date), as.Date("2017-12-25"))
 })
