@@ -4,7 +4,7 @@
 \alias{boxoffice}
 \title{Download Information on Box Office Results for Movies}
 \usage{
-boxoffice(dates = Sys.Date() - 1, site = "mojo", top_n = NULL)
+boxoffice(dates = as.Date("2017-12-25"), site = "mojo", top_n = NULL)
 }
 \arguments{
 \item{dates}{A vector of dates to scrape}
