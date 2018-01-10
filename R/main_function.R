@@ -49,8 +49,20 @@ boxoffice <- function(dates,
 
   results <- vector("list", length = length(dates))
   url_dates <- gsub("-", "/", dates)
-  for (i in seq_along(dates)) {
-    page <- xml2::read_html(paste0(url_start, url_dates[i]))
+  for (i in seq_along(url_dates)) {
+
+    page <- NULL
+    attempt <- 1
+    while (is.null(page) && attempt <= 3 ) {
+      Sys.sleep(0.3 * attempt)
+      attempt <- attempt + 1
+      try(
+        page <- xml2::read_html(paste0(url_start, url_dates[i])),
+      )
+    }
+    if (is.null(page)) {
+      message(url_dates[i], "culd not be scraped.")
+    } else {
     if (tolower(site) == "mojo") {
       page <- mojo_site(page)
     } else {
@@ -69,11 +81,17 @@ boxoffice <- function(dates,
     }
 
     results[[i]] <- page
+    }
   }
 
   # Faster to use data.table's rbindlist but don't want the dependency
   results <- do.call(rbind, results)
   results <- as.data.frame(results)
+
+  if (nrow(results) > 0) {
   return(results)
+  } else {
+    stop("No results found. Please check dates inputted against website.")
+  }
 
 }
