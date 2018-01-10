@@ -54,7 +54,7 @@ boxoffice <- function(dates,
     page <- NULL
     attempt <- 1
     while (is.null(page) && attempt <= 3 ) {
-      Sys.sleep(0.3 * attempt)
+      if (attempt > 1) Sys.sleep(0.3 * attempt)
       attempt <- attempt + 1
       try(
         page <- xml2::read_html(paste0(url_start, url_dates[i])),
