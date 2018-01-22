@@ -1,5 +1,7 @@
 ---
-output: github_document
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 [![Travis-CI Build Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice)
