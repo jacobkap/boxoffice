@@ -3,6 +3,7 @@
 #' A vector of dates to scrape
 #' @param site
 #' Whether you want to get data from boxofficemojo.com or the-numbers.com.
+#' Accepts inputs of "mojo" (default) or "numbers".
 #' @param top_n
 #' The number of results to return for each day. If NULL (default) returns
 #' all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
@@ -23,8 +24,10 @@
 #'
 #' @export
 boxoffice <- function(dates,
-                      site = "mojo",
+                      site = c("mojo", "numbers"),
                       top_n = NULL) {
+
+  if (identical(site, c("mojo", "numbers"))) site <- "mojo"
 
   stopifnot(length(site) == 1 && methods::is(dates, "Date") && is.atomic(dates))
   stopifnot(is.null(top_n) || is.numeric(top_n))

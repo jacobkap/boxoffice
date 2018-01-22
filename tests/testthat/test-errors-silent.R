@@ -29,8 +29,6 @@ test_that("wrong inputs cause error - site", {
   expect_error(boxoffice(dates = as.Date("2017-12-25"), site = "1:10"))
   expect_error(boxoffice(dates = as.Date("2017-12-25"), site = boxoffice()))
   expect_error(boxoffice(dates = as.Date("2017-12-25"), site = boxoffice))
-  expect_error(boxoffice(dates = as.Date("2017-12-25"),
-                         site = c("mojo", "numbers")))
 })
 
 test_that("wrong inputs cause error - top_n", {

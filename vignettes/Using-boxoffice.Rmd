@@ -1,9 +1,13 @@
 ---
-output: github_document
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-
-[![Travis-CI Build Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice)
-
 
 `boxoffice()` is a simple package to get information about daily box office results of movies. It scrapes the webpages of either [http://www.boxofficemojo.com](http://www.boxofficemojo.com) or [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information. The data it returns are the following:
 
