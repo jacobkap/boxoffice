@@ -12,10 +12,11 @@
 #' Data frame returning info on the name of the movie, its daily gross,
 #'  gross-to-date, and gross-per-theater for each date inputted.
 #' @examples
+#' # Uses the-numbers.com website.
 #' boxoffice(dates = as.Date("2017-12-25"))
 #'
-#' # Uses the-numbers.com website.
-#' boxoffice(dates = as.Date("2017-12-25"), site = "numbers")
+#' # Uses boxofficemojo.com website.
+#' boxoffice(dates = as.Date("2017-12-25"), site = "mojo")
 #'
 #' # Returns only top 10 (daily) grossing movies#'
 #' boxoffice(dates = as.Date("2017-12-25"), top_n = 10)
@@ -27,7 +28,7 @@ boxoffice <- function(dates,
                       site = c("mojo", "numbers"),
                       top_n = NULL) {
 
-  if (identical(site, c("mojo", "numbers"))) site <- "mojo"
+  if (identical(site, c("mojo", "numbers"))) site <- "numbers"
 
   stopifnot(length(site) == 1 && methods::is(dates, "Date") && is.atomic(dates))
   stopifnot(is.null(top_n) || is.numeric(top_n))
@@ -43,6 +44,14 @@ boxoffice <- function(dates,
   if ( (!is.null(top_n) && length(top_n) != 1) ||
       (!is.null(top_n) && top_n <= 0) ) {
     stop("top_n must be a single, positive number.")
+  }
+
+  if (site == "mojo") {
+    message(paste0("The terms of use for boxofficemojo.com does not permit scraping",
+                   " without their written permission. If you do not have",
+                   " written permission, please ask them for it or change the",
+                   " site parameter to 'numbers' to use the-numbers.com which",
+                   " does not forbid scraping without permission."))
   }
 
   url_start <- "https://www.the-numbers.com/box-office-chart/daily/"

@@ -1,36 +1,37 @@
 context("column-values")
 
-christmas <- boxoffice::boxoffice(dates = as.Date("2017-12-25"))
+christmas_mojo <- boxoffice::boxoffice(dates = as.Date("2017-12-25"),
+                                       site = "mojo")
 christmas_num <- boxoffice::boxoffice(dates = as.Date("2017-12-25"),
                                   site = "numbers")
 nums_ending_rows <- (nrow(christmas_num)-4):nrow(christmas_num)
 
 test_that("proper dimmensions", {
-  expect_equal(dim(christmas), c(59, 9))
+  expect_equal(dim(christmas_mojo), c(59, 9))
   expect_equal(dim(christmas_num), c(44, 9))
 })
 
 
 test_that("numeric columns are accurate", {
-  expect_equal(christmas$gross[c(1:5, 55:59)], c(27459557, 19138553,
+  expect_equal(christmas_mojo$gross[c(1:5, 55:59)], c(27459557, 19138553,
                                                  6496365, 5604273,
                                                  2805466, 483, 177,
                                                  160, 141, 117))
-  expect_equal(christmas$percent_change[c(1:5, 55:59)], c(56, 112, 147,
+  expect_equal(christmas_mojo$percent_change[c(1:5, 55:59)], c(56, 112, 147,
                                                           162, 113, NA,
                                                           NA, -36, NA, -25))
-  expect_equal(christmas$theaters[c(1:5, 55:59)], c(4232, 3765, 3447,
+  expect_equal(christmas_mojo$theaters[c(1:5, 55:59)], c(4232, 3765, 3447,
                                                     3006, 2111, 8, 2,
                                                     1, 3, 1))
-  expect_equal(christmas$per_theater[c(1:5, 55:59)], c(6489, 5083, 1885,
+  expect_equal(christmas_mojo$per_theater[c(1:5, 55:59)], c(6489, 5083, 1885,
                                                        1864, 1329, 60, 89,
                                                        160, 47, 117))
-  expect_equal(christmas$total_gross[c(1:5, 55:59)], c(395627411, 71913848,
+  expect_equal(christmas_mojo$total_gross[c(1:5, 55:59)], c(395627411, 71913848,
                                                        26424890, 19008847,
                                                        164307743, 563231,
                                                        51772, 92117,
                                                        9238, 12620))
-  expect_equal(christmas$days[c(1:5, 55:59)], c(11, 6, 4, 6, 34, 60,
+  expect_equal(christmas_mojo$days[c(1:5, 55:59)], c(11, 6, 4, 6, 34, 60,
                                                 69, 67, 11, 11))
 
 
@@ -56,7 +57,7 @@ test_that("numeric columns are accurate", {
 })
 
 test_that("categorical columns are accurate", {
-  expect_equal(christmas$movie[c(1:5, 55:59)], c("Star Wars: The Last Jedi",
+  expect_equal(christmas_mojo$movie[c(1:5, 55:59)], c("Star Wars: The Last Jedi",
                                              "Jumanji: Welcome to the Jungle",
                                              "Pitch Perfect 3",
                                              "The Greatest Showman",
@@ -66,7 +67,7 @@ test_that("categorical columns are accurate", {
                                              "BPM (Beats Per Minute)",
                                              "Permanent",
                                              "Birdboy: The Forgotten Children"))
-  expect_equal(christmas$distributor[c(1:5, 55:59)], c("BV", "Sony", "Uni.",
+  expect_equal(christmas_mojo$distributor[c(1:5, 55:59)], c("BV", "Sony", "Uni.",
                                                        "Fox", "BV", "SPC",
                                                        "FM", "Orch.", "Magn.",
                                                        "GK"))
@@ -96,6 +97,6 @@ test_that("categorical columns are accurate", {
 
 
 test_that("Date column is accurate", {
-  expect_equal(unique(christmas$date), as.Date("2017-12-25"))
+  expect_equal(unique(christmas_mojo$date), as.Date("2017-12-25"))
   expect_equal(unique(christmas_num$date), as.Date("2017-12-25"))
 })
