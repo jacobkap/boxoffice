@@ -28,6 +28,9 @@ boxoffice <- function(dates,
                       site = c("mojo", "numbers"),
                       top_n = NULL) {
 
+  useragent <- paste0("Mozilla/5.0 (compatible; a bot using the R boxoffice",
+                        " package; https://github.com/jacobkap/boxoffice/)")
+
   if (identical(site, c("mojo", "numbers"))) site <- "numbers"
 
   stopifnot(length(site) == 1 && methods::is(dates, "Date") && is.atomic(dates))
@@ -69,9 +72,10 @@ boxoffice <- function(dates,
       if (attempt > 1) Sys.sleep(0.3 * attempt)
       attempt <- attempt + 1
       try(
-        page <- xml2::read_html(paste0(url_start, url_dates[i])),
+        page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent)),
       )
     }
+    page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
       message(url_dates[i], "culd not be scraped.")
     } else {
