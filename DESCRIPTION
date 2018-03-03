@@ -1,7 +1,7 @@
 Package: boxoffice
 Title: Downloads Box Office Information for Given Dates (How Much Each Movie
     Earned in Theaters)
-Version: 1.0.1
+Version: 1.1.1
 Authors@R: person("Jacob", "Kaplan", email = "jkkaplan6@gmail.com", role = c("aut", "cre"))
 Description: Download daily box office information (how much each movie earned
     in theaters) using data from either Box Office Mojo (<http://www.boxofficemojo.com/>) or
@@ -9,8 +9,8 @@ Description: Download daily box office information (how much each movie earned
 Depends: 
 Imports:
     rvest,
-    methods,
-    httr
+    httr,
+    methods
 License: GPL
 Encoding: UTF-8
 LazyData: true

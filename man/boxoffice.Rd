@@ -24,10 +24,11 @@ Data frame returning info on the name of the movie, its daily gross,
 Download Information on Box Office Results for Movies
 }
 \examples{
+# Uses the-numbers.com website.
 boxoffice(dates = as.Date("2017-12-25"))
 
-# Uses the-numbers.com website.
-boxoffice(dates = as.Date("2017-12-25"), site = "numbers")
+# Uses boxofficemojo.com website.
+boxoffice(dates = as.Date("2017-12-25"), site = "mojo")
 
 # Returns only top 10 (daily) grossing movies#'
 boxoffice(dates = as.Date("2017-12-25"), top_n = 10)
