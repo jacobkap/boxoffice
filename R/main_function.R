@@ -66,15 +66,15 @@ boxoffice <- function(dates,
   url_dates <- gsub("-", "/", dates)
   for (i in seq_along(url_dates)) {
 
-    page <- NULL
-    attempt <- 1
-    while (is.null(page) && attempt <= 3 ) {
-      if (attempt > 1) Sys.sleep(0.3 * attempt)
-      attempt <- attempt + 1
-      try(
-        page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent)),
-      )
-    }
+        page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
+        if (httr::http_error(page)) {
+          Sys.sleep(0.5)
+          page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
+        }
+        if (httr::http_error(page)) {
+          page <- NULL
+        }
+
     page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
       message(url_dates[i], "culd not be scraped.")

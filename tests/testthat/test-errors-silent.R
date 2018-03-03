@@ -57,6 +57,8 @@ test_that("wrong inputs cause error - dates", {
   expect_error(boxoffice(dates = 0))
   expect_error(boxoffice(dates = "2012-12-25"))
   expect_error(boxoffice(dates = c(10, as.Date(c("2012-01-01")))))
+  expect_error(boxoffice(dates = as.Date(Sys.Date())))
+  expect_error(boxoffice(dates = as.Date("2025-01-01")))
   expect_error(boxoffice(dates = Sys.Date()))
   expect_error(boxoffice(dates = as.Date(c("2012-01-01",
                                            "2013-01-01", "2025-12-25"))))
