@@ -1,6 +1,5 @@
 Package: boxoffice
-Title: Downloads Box Office Information for Given Dates (How Much Each Movie
-    Earned in Theaters)
+Title: Downloads Box Office Information for Given Dates
 Version: 1.1.0
 Authors@R: person("Jacob", "Kaplan", email = "jkkaplan6@gmail.com", role = c("aut", "cre"))
 Description: Download daily box office information (how much each movie earned
