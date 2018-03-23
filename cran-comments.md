@@ -1,8 +1,8 @@
 ## Test environments
 
 * local Windows install, R 3.4.3
-* Ubuntu 14.04.5 (on travis-ci), R 3.4.2
-* AppVeyor, R 3.4.3
+* Ubuntu 14.04.5 (on travis-ci), R 3.4.4
+* AppVeyor, R 3.4.4
 * win-builder (devel & release)
 
 ## R CMD check results
