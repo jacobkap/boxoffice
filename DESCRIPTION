@@ -9,7 +9,8 @@ Depends:
 Imports:
     rvest,
     httr,
-    methods
+    methods,
+    dplyr
 License: GPL
 Encoding: UTF-8
 LazyData: true

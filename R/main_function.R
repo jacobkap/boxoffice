@@ -37,7 +37,7 @@ boxoffice <- function(dates,
   stopifnot(is.null(top_n) || is.numeric(top_n))
 
   if (any(dates >= (Sys.Date()))) {
-    stop("Yesterday's data is latest available. Please choose another date")
+    stop("Yesterday's data is the latest available. Please choose another date")
   }
 
   if (!tolower(site) %in% c("mojo", "numbers")) {
@@ -77,7 +77,7 @@ boxoffice <- function(dates,
 
     page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
-      message(url_dates[i], "culd not be scraped.")
+      message(url_dates[i], "could not be scraped.")
     } else {
     if (tolower(site) == "mojo") {
       page <- mojo_site(page)
