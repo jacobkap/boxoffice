@@ -1,5 +1,5 @@
 
-#' Title
+#' Get the top N ranking grossing movies
 #'
 #' @param type
 #' A string that says which type of box office you want. Options are
