@@ -1,4 +1,28 @@
 
+#' Title
+#'
+#' @param type
+#' A string that says which type of box office you want. Options are
+#' 'domestic' (American box office), 'international' (non-American) and
+#' 'worldwide' (domestic + international box office).
+#'
+#' @param ranks
+#' A vector of rankings based on ticket gross (e.g. Rank of 1 means
+#' top selling movie, 2 is second top selling, etc.).
+#'
+#' @return
+#' Data frame returning info on the name of the movie, it's rank,
+#' the year the movie was released, and the total gross from
+#' domestic (American), international, and total ticket sales.
+#' @export
+#'
+#' @examples
+#' top_grossing()
+#'
+#' top_grossing(ranks = 1:5)
+#'
+#' top_grossing(type = "international")
+#' top_grossing(type = "international", ranks = 1:10)
 top_grossing <- function(type = "american",
                          ranks = 1:100) {
 
@@ -35,7 +59,7 @@ top_grossing <- function(type = "american",
   }
   for (i in page_numbers) {
     temp       <- get_rank_data(url_start, i)
-    final_data <- dplyr::bind_rows(final_data, temp)
+    final_data <- rbind(final_data, temp)
   }
 
   final_data <- clean_top_grossing(final_data, ranks)
@@ -46,26 +70,25 @@ top_grossing <- function(type = "american",
 
 
 clean_top_grossing <- function(data, ranks) {
-  data <-
-    data %>%
-    dplyr::rename(rank                     = Rank,
-                  year_released            = Released,
-                  movie                    = Movie,
-                  american_box_office      = `DomesticBox Office`,
-                  international_box_office = `InternationalBox Office`,
-                  total_box_office         = `WorldwideBox Office`) %>%
-    dplyr::mutate(rank                     = numeric_cleaner(rank),
-                  year_released            = as.numeric(year_released),
-                  american_box_office      = numeric_cleaner(american_box_office),
-                  international_box_office = numeric_cleaner(international_box_office),
-                  total_box_office         = numeric_cleaner(total_box_office)) %>%
-    dplyr::filter(rank %in% ranks) %>%
-    dplyr::select(rank,
-                  movie,
-                  year_released,
-                  american_box_office,
-                  international_box_office,
-                  total_box_office)
+  names(data) <- gsub(" ", "_", names(data))
+  names(data) <- gsub("^Rank$",                    "rank", names(data))
+  names(data) <- gsub("^Released$",                "year_released", names(data))
+  names(data) <- gsub("^Movie$",                   "movie", names(data))
+  names(data) <- gsub("^DomesticBox_Office$",      "american_box_office", names(data))
+  names(data) <- gsub("^InternationalBox_Office$", "international_box_office", names(data))
+  names(data) <- gsub("^WorldwideBox_Office$",     "total_box_office", names(data))
+  data$rank                     <- numeric_cleaner(data$rank)
+  data$year_released            <- numeric_cleaner(data$year_released)
+  data$american_box_office      <- numeric_cleaner(data$american_box_office)
+  data$international_box_office <- numeric_cleaner(data$international_box_office)
+  data$total_box_office         <- numeric_cleaner(data$total_box_office)
+  data <- data[data$rank %in% ranks, ]
+  data <- data[, c("rank",
+                   "movie",
+                   "year_released",
+                   "american_box_office",
+                   "international_box_office",
+                   "total_box_office")]
   return(data)
 }
 
@@ -75,7 +98,8 @@ get_rank_data <- function(url, page_number) {
                       " package; https://github.com/jacobkap/boxoffice/)")
   page <- httr::GET(paste0(url, page_number), httr::user_agent(useragent))
   page <- httr::content(page, "parsed", encoding = "UTF-8")
-  page <- page %>% rvest::html_nodes("th , td") %>% rvest::html_text()
+  page <- rvest::html_nodes(page, "th , td")
+  page <- rvest::html_text(page)
   dim(page) <- c(6, length(page) / 6)
   page <- t(page)
   page <- data.frame(page, stringsAsFactors = FALSE)
