@@ -2,17 +2,17 @@
 % Please edit documentation in R/top_grossing.R
 \name{top_grossing}
 \alias{top_grossing}
-\title{Title}
+\title{Get the top N ranking grossing movies}
 \usage{
 top_grossing(type = "american", ranks = 1:100)
 }
 \arguments{
-\item{type}{A string that says which type of box office you want. Options are
+\item{type}{A string that says which type of box office sorted ranking you want. Options are
 'domestic' (American box office), 'international' (non-American) and
 'worldwide' (domestic + international box office).}
 
-\item{ranks}{A vector of rankings based on ticket gross (e.g. Rank of 1 means
-top selling movie, 2 is second top selling, etc.).}
+\item{ranks}{A vector of rankings you want it to return. For example.
+an input of 1:5 will return the top 5 grossing movies.}
 }
 \value{
 Data frame returning info on the name of the movie, it's rank,
@@ -20,7 +20,7 @@ the year the movie was released, and the total gross from
 domestic (American), international, and total ticket sales.
 }
 \description{
-Title
+Get the top N ranking grossing movies
 }
 \examples{
 top_grossing()
