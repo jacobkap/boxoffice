@@ -100,13 +100,13 @@ test_that("columns have right values", {
   expect_equal(head(example$international_box_office), c(1116648995,
                                                          2015837654,
                                                          647011693,
-                                                         1335469653,
+                                                         1329609642,
                                                          1548844451,
                                                          996622583))
   expect_equal(head(example$total_box_office), c(2053311220,
                                                  2776345279,
-                                                 1347071279,
-                                                 2014285135,
+                                                 1347071259,
+                                                 2008425124,
                                                  2208208395,
                                                  1648893208))
 
@@ -125,7 +125,7 @@ test_that("columns have right values", {
                                                     "The Fate of the Furious"))
   expect_equal(head(example_international$international_box_office), c(2015837654,
                                                                        1548844451,
-                                                                       1335469653,
+                                                                       1329609642,
                                                                        1165715774,
                                                                        1116648995,
                                                                        1009143255))
@@ -137,7 +137,7 @@ test_that("columns have right values", {
                                                                   225764765))
   expect_equal(head(example_international$total_box_office), c(2776345279,
                                                                2208208395,
-                                                               2014285135,
+                                                               2008425124,
                                                                1518722794,
                                                                2053311220,
                                                                1234908020))
@@ -148,29 +148,29 @@ test_that("columns have right values", {
                                                         2015,
                                                         2018,
                                                         2015,
-                                                        2012))
+                                                        2015))
   expect_equal(head(example_worldwide$movie), c("Avatar",
                                                 "Titanic",
                                                 "Star Wars Ep. VII: The Force Awakens",
                                                 "Avengers: Infinity War",
                                                 "Jurassic World",
-                                                "The Avengers"))
+                                                "Furious 7"))
   expect_equal(head(example_worldwide$total_box_office), c(2776345279,
                                                            2208208395,
                                                            2053311220,
-                                                           2014285135,
+                                                           2008425124,
                                                            1648893208,
-                                                           1519479547))
+                                                           1518722794))
   expect_equal(head(example_worldwide$american_box_office), c(760507625,
                                                               659363944,
                                                               936662225,
                                                               678815482,
                                                               652270625,
-                                                              623279547))
+                                                              353007020))
   expect_equal(head(example_worldwide$international_box_office), c(2015837654,
                                                                    1548844451,
                                                                    1116648995,
-                                                                   1335469653,
+                                                                   1329609642,
                                                                    996622583,
-                                                                   896200000))
+                                                                   1165715774))
 })
