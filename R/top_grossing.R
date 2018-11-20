@@ -3,7 +3,7 @@
 #'
 #' @param type
 #' A string that says which type of box office sorted ranking you want. Options are
-#' 'domestic' (American box office), 'international' (non-American) and
+#' 'american' (American box office), 'international' (non-American) and
 #' 'worldwide' (domestic + international box office).
 #'
 #' @param ranks
@@ -26,7 +26,9 @@
 top_grossing <- function(type = "american",
                          ranks = 1:100) {
 
+
   stopifnot(is.numeric(ranks) && is.character(type) && length(type) == 1)
+  type <- tolower(type)
 
   if (!type %in% c("american",
                    "international", "worldwide")) {

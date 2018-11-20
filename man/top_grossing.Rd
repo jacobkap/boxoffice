@@ -8,7 +8,7 @@ top_grossing(type = "american", ranks = 1:100)
 }
 \arguments{
 \item{type}{A string that says which type of box office sorted ranking you want. Options are
-'domestic' (American box office), 'international' (non-American) and
+'american' (American box office), 'international' (non-American) and
 'worldwide' (domestic + international box office).}
 
 \item{ranks}{A vector of rankings you want it to return. For example.
