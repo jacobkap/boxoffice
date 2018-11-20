@@ -9,7 +9,6 @@
 
 There were no ERRORs or WARNINGs or NOTES.
 
-This is actually spelled correctly. 
 
 ## Reverse dependencies
 
