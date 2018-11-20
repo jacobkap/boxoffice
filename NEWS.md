@@ -1,3 +1,7 @@
+# boxoffice 1.1.01
+
+* Changes some tests as the website's top grossing page has been updated.
+
 # boxoffice 1.1.0
 
 * Adds message about boxofficemojo.com's scraping rules
