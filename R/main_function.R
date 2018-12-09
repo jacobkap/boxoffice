@@ -77,7 +77,7 @@ boxoffice <- function(dates,
 
     page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
-      message(url_dates[i], "could not be scraped.")
+      message(url_dates[i], "could not be scraped. Please check the website to make sure the date is available.")
     } else {
     if (tolower(site) == "mojo") {
       page <- mojo_site(page)
@@ -107,7 +107,7 @@ boxoffice <- function(dates,
   if (nrow(results) > 0) {
   return(results)
   } else {
-    stop("No results found. Please check dates inputted against website.")
+    stop("No results found. Please check the website to make sure the dates are available.")
   }
 
 }

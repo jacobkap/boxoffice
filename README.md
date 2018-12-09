@@ -2,6 +2,9 @@
 Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice)
+
+[![Coverage status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
+
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice)
 
 `boxoffice()` is a simple package to get information about daily box
