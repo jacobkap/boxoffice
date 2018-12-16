@@ -1,11 +1,11 @@
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice.png)
 [![Travis-CI Build
 Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice)
-
-[![Coverage status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
-
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice)
+[![Coverage
+status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
+[![](https://cranlogs.r-pkg.org/badges/boxoffice)](https://cran.rstudio.com/web/packages/boxoffice/index.html)
 
 `boxoffice()` is a simple package to get information about daily box
 office results of movies. It scrapes the webpages of either
@@ -29,18 +29,18 @@ movies <- boxoffice::boxoffice(date = as.Date("2015-10-31"))
 dim(movies)
 ```
 
-    ## [1] 40  9
+    ## [1] 46  9
 
 ``` r
 movies[1:5, ]
 ```
 
-    ##                   movie distributor   gross percent_change theaters
-    ## 1           The Martian         Fox 4564809             31     3218
-    ## 2       Bridge of Spies          BV 3588796             45     2873
-    ## 3            Goosebumps        Sony 3326075              9     3618
-    ## 4 The Last Witch Hunter        LG/S 2023321             36     3082
-    ## 5  Hotel Transylvania 2        Sony 1905762              7     2962
+    ##                   movie      distributor   gross percent_change theaters
+    ## 1           The Martian 20th Century Fox 4564809             31     3218
+    ## 2       Bridge of Spies      Walt Disney 3588796             45     2873
+    ## 3            Goosebumps    Sony Pictures 3326075              9     3618
+    ## 4 The Last Witch Hunter        Lionsgate 2023321             36     3082
+    ## 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962
     ##   per_theater total_gross days       date
     ## 1        1419   179446657   30 2015-10-31
     ## 2        1249    43200132   16 2015-10-31
@@ -67,6 +67,11 @@ parameter to only return the top 10 selling movies.
 ``` r
 mojo <- boxoffice::boxoffice(dates = as.Date("2015-10-31"), 
                              site = "mojo", top_n = 10)
+```
+
+    ## The terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change the site parameter to 'numbers' to use the-numbers.com which does not forbid scraping without permission.
+
+``` r
 numbers <- boxoffice::boxoffice(dates = as.Date("2015-10-31"),
                              site = "numbers", top_n = 10)
 cbind(mojo[, c(1,3)], numbers[, c(1,3)])
