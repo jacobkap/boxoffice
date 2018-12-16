@@ -7,10 +7,13 @@ Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?br
 status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
 [![](https://cranlogs.r-pkg.org/badges/boxoffice)](https://cran.rstudio.com/web/packages/boxoffice/index.html)
 
-`boxoffice()` is a simple package to get information about daily box
-office results of movies. It scrapes the webpages of either
-<http://www.boxofficemojo.com> or <https://www.the-numbers.com/> for
-this information. The data it returns are the following:
+Overview
+--------
+
+The goal of `boxoffice()` is to scrape movie data to get information
+about daily box office results of movies. It scrapes the webpages of
+either <http://www.boxofficemojo.com> or <https://www.the-numbers.com/>
+for this information. The data it returns are the following:
 
 1.  Movie name  
 2.  The studio that produced that movie  
@@ -21,6 +24,19 @@ this information. The data it returns are the following:
 7.  Gross-to-date  
 8.  How many days the movie has been playing  
 9.  The date of the data
+
+Installation
+------------
+
+``` r
+To install this package, use the code
+install.packages("boxoffice")
+
+
+# The development version is available on Github.
+# install.packages("devtools")
+devtools::install_github("jacobkap/boxoffice")
+```
 
 In essence, it shows how well each movie performed on a given day.
 
