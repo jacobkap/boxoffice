@@ -1,5 +1,5 @@
 ---
-title: "Get top grossing movies"
+title: "Get Top Grossing movies"
 author: "Jacob Kaplan"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

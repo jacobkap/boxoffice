@@ -55,7 +55,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/Using-boxoffice.html">Using boxoffice</a>
+      <a href="articles/get_daily_box_office_info.html">Get Daily Movie Sales</a>
+    </li>
+    <li>
+      <a href="articles/top_grossing.html">Get Top Grossing movies</a>
     </li>
   </ul>
 </li>
@@ -82,7 +85,24 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>The goal of <code><a href="reference/boxoffice.html">boxoffice()</a></code> is to scrape movie data to get information about daily box office results of movies. It scrapes the webpages of either <a href="http://www.boxofficemojo.com">http://www.boxofficemojo.com</a> or <a href="https://www.the-numbers.com/">https://www.the-numbers.com/</a> for this information. The data it returns are the following:</p>
+<p>The goal of <code>boxoffice</code> is to scrape movie data to get information about daily box office results of movies and top grossing movies. It scrapes the webpages of either <a href="http://www.boxofficemojo.com">http://www.boxofficemojo.com</a> or <a href="https://www.the-numbers.com/">https://www.the-numbers.com/</a> for this information.</p>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">To install this package, use the code</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"boxoffice"</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co"># The development version is available on Github.</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"jacobkap/boxoffice"</span>)</a></code></pre></div>
+</div>
+<div id="overview-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview-1" class="anchor"></a>Overview</h2>
+<p>The <code><a href="reference/boxoffice.html">boxoffice()</a></code> function gets daily boxoffice information. In essence, it shows how well each movie performed on that day.</p>
+<p>The data it returns are the following:</p>
 <ol style="list-style-type: decimal">
 <li>Movie name<br>
 </li>
@@ -97,70 +117,51 @@
 <li>Average gross per theater (result of 4 / result of 5)</li>
 <li>Gross-to-date<br>
 </li>
-<li>How many days the movie has been playing<br>
+<li>How many days the movie has been in theaters<br>
 </li>
 <li>The date of the data</li>
 </ol>
-</div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">To install this package, use the code</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"boxoffice"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co"># The development version is available on Github.</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"jacobkap/boxoffice"</span>)</a></code></pre></div>
-<p>In essence, it shows how well each movie performed on a given day.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(movies)</a></code></pre></div>
-<pre><code>## [1] 46  9</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">movies[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, ]</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
 <pre><code>##                   movie      distributor   gross percent_change theaters
 ## 1           The Martian 20th Century Fox 4564809             31     3218
 ## 2       Bridge of Spies      Walt Disney 3588796             45     2873
 ## 3            Goosebumps    Sony Pictures 3326075              9     3618
 ## 4 The Last Witch Hunter        Lionsgate 2023321             36     3082
 ## 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962
+## 6                 Burnt    Weinstein Co. 1733927             -5     3003
 ##   per_theater total_gross days       date
 ## 1        1419   179446657   30 2015-10-31
 ## 2        1249    43200132   16 2015-10-31
 ## 3         919    53277832   16 2015-10-31
 ## 4         656    17377961    9 2015-10-31
-## 5         643   153858782   37 2015-10-31</code></pre>
-<p>There are three parameters for <code><a href="reference/boxoffice.html">boxoffice()</a></code>: <code>dates</code>, <code>site</code>, and <code>top_n</code>.</p>
-<p><code>dates</code> are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. <code>site</code> indicates which site you want to scrape: the-numbers.com or boxofficemojo.com. The accepted inptus are “mojo” which is the default site or “numbers”. Both sites are very similar and provide nearly identical results. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value.</p>
-<p>Here is the first 10 movie names for both sites. We will use the <code>top_n</code> parameter to only return the top 10 selling movies.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">mojo &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">dates =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>), </a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">                             <span class="dt">site =</span> <span class="st">"mojo"</span>, <span class="dt">top_n =</span> <span class="dv">10</span>)</a></code></pre></div>
-<pre><code>## The terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change the site parameter to 'numbers' to use the-numbers.com which does not forbid scraping without permission.</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">numbers &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">dates =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>),</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">                             <span class="dt">site =</span> <span class="st">"numbers"</span>, <span class="dt">top_n =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cbind">cbind</a></span>(mojo[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">3</span>)], numbers[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">3</span>)])</a></code></pre></div>
-<pre><code>##                                       movie   gross
-## 1                               The Martian 4564809
-## 2                           Bridge of Spies 3588796
-## 3                                Goosebumps 3326075
-## 4                     The Last Witch Hunter 2023321
-## 5                      Hotel Transylvania 2 1905762
-## 6                                     Burnt 1733927
-## 7  Paranormal Activity: The Ghost Dimension 1452089
-## 8                              Crimson Peak 1393460
-## 9                Our Brand Is Crisis (2015) 1260523
-## 10                               Steve Jobs 1021780
-##                           movie   gross
-## 1                   The Martian 4564809
-## 2               Bridge of Spies 3588796
-## 3                    Goosebumps 3326075
-## 4         The Last Witch Hunter 2023321
-## 5          Hotel Transylvania 2 1905762
-## 6                         Burnt 1733927
-## 7  Paranormal Activity: The Gh… 1452089
-## 8                  Crimson Peak 1393460
-## 9           Our Brand is Crisis 1260523
-## 10 The Met: Live in HD - Tannh… 1150000</code></pre>
-<p>The results are close. Some movie name spellings and numbers are slightly different. In this case, the 10th ranking movie is also different vetween the sites. Situations like this are rare. When looking at more recent releases (e.g. within the last two weeks), there will be more differences. These differences will disappear (at least for the most part) as time goes on.</p>
+## 5         643   153858782   37 2015-10-31
+## 6         577     3563747    2 2015-10-31</code></pre>
+<p>The <code><a href="reference/top_grossing.html">top_grossing()</a></code> function gets the</p>
+<ol style="list-style-type: decimal">
+<li>Movie name</li>
+<li>Year released</li>
+<li>Total domestic (American market) sales</li>
+<li>Total international sales</li>
+<li>Total sales (domestic + international)</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>()</a></code></pre></div>
+<pre><code>## Please note that these numbers are not adjusted for inflation.</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
+<pre><code>##   rank                                movie year_released
+## 2    1 Star Wars Ep. VII: The Force Awakens          2015
+## 3    2                               Avatar          2009
+## 4    3                        Black Panther          2018
+## 5    4               Avengers: Infinity War          2018
+## 6    5                              Titanic          1997
+## 7    6                       Jurassic World          2015
+##   american_box_office international_box_office total_box_office
+## 2           936662225               1116648995       2053311220
+## 3           760507625               2015837654       2776345279
+## 4           700059566                647011693       1347071259
+## 5           678815482               1370000000       2048815482
+## 6           659363944               1548844451       2208208395
+## 7           652270625                996622583       1648893208</code></pre>
 </div>
   </div>
 
