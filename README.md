@@ -1,4 +1,4 @@
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice.png)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice.png)
 [![Travis-CI Build
 Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice)
 [![AppVeyor Build
@@ -12,7 +12,7 @@ Overview
 
 The goal of `boxoffice` is to scrape movie data to get information about
 daily box office results of movies and top grossing movies. It scrapes
-the webpages of either <http://www.boxofficemojo.com> or
+the webpages of either <https://www.boxofficemojo.com> or
 <https://www.the-numbers.com/> for this information.
 
 Installation
