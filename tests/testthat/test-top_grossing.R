@@ -1,9 +1,5 @@
 context("top_grossing")
 
-example               <- boxoffice::top_grossing()
-example_international <- boxoffice::top_grossing(type = "international")
-example_worldwide     <- boxoffice::top_grossing(type = "worldwide")
-
 test_that("wrong inputs cause error", {
   expect_error(top_grossing(ranks = "a"))
   expect_error(top_grossing(ranks = -1))
@@ -16,6 +12,7 @@ test_that("wrong inputs cause error", {
 })
 
 test_that("Correct number of rows and cols", {
+  skip_on_cran()
   expect_equal(dim(top_grossing(ranks = 1:5)),              c(5, 6))
   expect_equal(dim(top_grossing()),                         c(100, 6))
   expect_equal(dim(top_grossing(ranks = 1:500)),            c(500, 6))
@@ -26,6 +23,7 @@ test_that("Correct number of rows and cols", {
 })
 
 test_that("ranks are right", {
+  skip_on_cran()
   expect_equal(top_grossing(ranks = 1:5)$rank,              1:5)
   expect_equal(top_grossing()$rank,                         1:100)
   expect_equal(top_grossing(ranks = 1:500)$rank,            1:500)

@@ -1,6 +1,5 @@
 context("errors-silent")
 
-christmas <- as.Date(c("2012-12-25", "2013-12-25"))
 
 test_that("returns silent", {
   expect_silent(boxoffice(dates = as.Date("2017-12-25")))

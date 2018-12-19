@@ -3,7 +3,7 @@
 #' A vector of dates to scrape
 #' @param site
 #' Whether you want to get data from boxofficemojo.com or the-numbers.com.
-#' Accepts inputs of "mojo" (default) or "numbers".
+#' Accepts inputs of "numbers" (default) or "mojo".
 #' @param top_n
 #' The number of results to return for each day. If NULL (default) returns
 #' all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
@@ -28,7 +28,8 @@ boxoffice <- function(dates,
                       site = c("mojo", "numbers"),
                       top_n = NULL) {
 
-  useragent <- paste0("Mozilla/5.0 (compatible; a bot using the R boxoffice",
+  useragent <- paste0(
+    "Mozilla/5.0 (compatible; a bot using the R boxoffice",
                         " package; https://github.com/jacobkap/boxoffice/)")
 
   if (identical(site, c("mojo", "numbers"))) site <- "numbers"
@@ -77,7 +78,7 @@ boxoffice <- function(dates,
 
     page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
-      message(url_dates[i], "could not be scraped. Please check the website to make sure the date is available.")
+      message(url_dates[i], "could not be scraped. Please check the website to make sure the date is available or check your internet connection.")
     } else {
     if (tolower(site) == "mojo") {
       page <- mojo_site(page)

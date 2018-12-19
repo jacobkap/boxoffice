@@ -1,4 +1,3 @@
-
 #' Get the top N ranking grossing movies
 #'
 #' @param type

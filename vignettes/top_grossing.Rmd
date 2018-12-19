@@ -1,0 +1,62 @@
+---
+title: "Get top grossing movies"
+author: "Jacob Kaplan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get top grossing movies}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This function collects data from the-numbers' list of movies ordered by how much money they made. This list is ordered by the total sales in one of three jurisdictions: American(usually called domestic), international, and worldwide (domestic+international). The first parameter, `type`, lets you choose which of these jurisdictions you want the data ordered by. The data scraped is the name of the movie, its rank based on the order in the list type you select, and how much it made for all three jurisdictions. The second and only other parameter, `ranks` lets you select movies in certain ranks - e.g. the top 10 movies, #s 100-105, etc.
+
+## `type`
+
+The parameter `type` lets you choose if you want the list of top grossing movies ordered by sales in "American", by "international" sales, or "worldwide" sales. As some movies do better out of the America, this results in slightly differed ordering. The default selection is America.
+
+```{r}
+# America
+movies <- boxoffice::top_grossing(type = "American")
+head(movies)
+```
+
+```{r}
+# International
+movies <- boxoffice::top_grossing(type = "international")
+head(movies)
+```
+
+```{r}
+# Worldwide
+movies <- boxoffice::top_grossing(type = "worldwide")
+head(movies)
+```
+
+## ranks
+
+The `ranks` parameter accepts a vector of numbers indicating which rank(s) you want returned. For example using 1-5 will return only the top 5 movies. The default selection is to return ranks 1-100.
+
+```{r}
+movies <- boxoffice::top_grossing()
+head(movies)
+```
+
+```{r}
+# 
+movies <- boxoffice::top_grossing(ranks = 1)
+head(movies)
+```
+
+```{r}
+# Worldwide
+movies <- boxoffice::top_grossing(ranks = c(1000, 34, 1, 55, 64))
+head(movies)
+```
