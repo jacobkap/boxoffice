@@ -38,7 +38,7 @@ movies[1:5, ]
 
 There are three parameters for `boxoffice()`: `dates`, `site`, and `top_n`.
 
-`dates` are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. `site` indicates which site you want to scrape: the-numbers.com or boxofficemojo.com. The accepted inptus are "numbers" which is the default site or "mojo". Both sites are very similar and provide nearly identical results. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value. 
+`dates` are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. `site` indicates which site you want to scrape: the-numbers.com or boxofficemojo.com. The accepted inputs are "numbers" which is the default site or "mojo". Both sites are very similar and provide nearly identical results. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value. 
 
 Note that the terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change or only scrape from the-numbers.com.
 
@@ -52,4 +52,4 @@ numbers <- boxoffice::boxoffice(dates = as.Date("2015-10-31"),
 cbind(mojo[, c(1,3)], numbers[, c(1,3)])
 ```
 
-The results are close. Some movie name spellings and numbers are slightly different. In this case, the 10th ranking movie is also different vetween the sites. Situations like this are rare. When looking at more recent releases (e.g. within the last two weeks), there will be more differences. These differences will disappear (at least for the most part) as time goes on.  
+The results are close. Some movie name spellings and numbers are slightly different. In this case, the 10th ranking movie is also different between the sites. Situations like this are rare. When looking at more recent releases (e.g. within the last two weeks), there will be more differences. These differences will disappear (at least for the most part) as time goes on.  
