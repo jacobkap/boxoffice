@@ -24,7 +24,7 @@ install.packages("boxoffice")
 devtools::install_github("jacobkap/boxoffice")
 ```
 
-## Overview
+## Usage
 
 The `boxoffice()` function gets daily boxoffice information. In essence, it shows how well each movie performed on that day.
 
