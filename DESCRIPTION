@@ -5,7 +5,6 @@ Authors@R: person("Jacob", "Kaplan", email = "jkkaplan6@gmail.com", role = c("au
 Description: Download daily box office information (how much each movie earned
     in theaters) using data from either Box Office Mojo (<http://www.boxofficemojo.com/>) or
    The Numbers (<http://www.the-numbers.com/>).
-Depends: 
 Imports:
     rvest,
     httr,
@@ -14,8 +13,11 @@ License: GPL
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Suggests: testthat,
+Suggests: 
+    testthat,
     knitr,
     covr,
-    rmarkdown
+    rmarkdown,
+    spelling
 VignetteBuilder: knitr
+Language: en-US
