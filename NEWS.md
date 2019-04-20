@@ -1,3 +1,7 @@
+# boxoffice 1.2.2
+
+* Fix tests due to site updating box office totals.
+
 # boxoffice 1.2.0
 
 * Adds ability to scrape top grossing movies - based on domestic (American), international, and total gross.

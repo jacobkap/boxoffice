@@ -99,14 +99,14 @@ test_that("columns have right values", {
                                                     652270625))
   expect_equal(head(example$international_box_office), c(1116648995,
                                                          2015837654,
-                                                         648300000,
-                                                         1369988242,
+                                                         648198658,
+                                                         1369982200,
                                                          1548844451,
                                                          996584239))
   expect_equal(head(example$total_box_office), c(2053311220,
                                                  2776345279,
-                                                 1348359566,
-                                                 2048803724,
+                                                 1348258224,
+                                                 2048797682,
                                                  2208208395,
                                                  1648854864))
 
@@ -127,10 +127,10 @@ test_that("columns have right values", {
   expect_equal(head(example_international$international_box_office),
                c(2015837654,
                  1548844451,
-                 1369988242,
+                 1369982200,
                  1165715774,
                  1116648995,
-                 1009137963))
+                 1009081502))
   expect_equal(head(example_international$american_box_office),
                c(760507625,
                  659363944,
@@ -141,10 +141,10 @@ test_that("columns have right values", {
   expect_equal(head(example_international$total_box_office),
                c(2776345279,
                  2208208395,
-                 2048803724,
+                 2048797682,
                  1518722794,
                  2053311220,
-                 1234902728))
+                 1234846267))
 
   expect_equal(head(example_worldwide$rank), 1:6)
   expect_equal(head(example_worldwide$year_released), c(2009,
@@ -164,7 +164,7 @@ test_that("columns have right values", {
                c(2776345279,
                  2208208395,
                  2053311220,
-                 2048803724,
+                 2048797682,
                  1648854864,
                  1518722794))
   expect_equal(head(example_worldwide$american_box_office),
@@ -178,7 +178,7 @@ test_that("columns have right values", {
                c(2015837654,
                  1548844451,
                  1116648995,
-                 1369988242,
+                 1369982200,
                  996584239,
                  1165715774))
 })
