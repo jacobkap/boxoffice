@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">boxoffice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.2</span>
       </span>
     </div>
 
@@ -90,17 +90,17 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">To install this package, use the code</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"boxoffice"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co"># The development version is available on Github.</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"jacobkap/boxoffice"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">To install this package, use the code</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"boxoffice"</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"># The development version is available on Github.</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb1-7" title="7">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"jacobkap/boxoffice"</span>)</a></code></pre></div>
 </div>
-<div id="overview-1" class="section level2">
+<div id="usage" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview-1" class="anchor"></a>Overview</h2>
+<a href="#usage" class="anchor"></a>Usage</h2>
 <p>The <code><a href="reference/boxoffice.html">boxoffice()</a></code> function gets daily boxoffice information. In essence, it shows how well each movie performed on that day.</p>
 <p>The data it returns are the following:</p>
 <ol style="list-style-type: decimal">
@@ -121,8 +121,8 @@
 </li>
 <li>The date of the data</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
 <pre><code>##                   movie      distributor   gross percent_change theaters
 ## 1           The Martian 20th Century Fox 4564809             31     3218
 ## 2       Bridge of Spies      Walt Disney 3588796             45     2873
@@ -145,9 +145,9 @@
 <li>Total international sales</li>
 <li>Total sales (domestic + international)</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>()</a></code></pre></div>
 <pre><code>## Please note that these numbers are not adjusted for inflation.</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
 <pre><code>##   rank                                movie year_released
 ## 2    1 Star Wars Ep. VII: The Force Awakens          2015
 ## 3    2                               Avatar          2009
@@ -158,10 +158,10 @@
 ##   american_box_office international_box_office total_box_office
 ## 2           936662225               1116648995       2053311220
 ## 3           760507625               2015837654       2776345279
-## 4           700059566                647011693       1347071259
-## 5           678815482               1370000000       2048815482
+## 4           700059566                648198658       1348258224
+## 5           678815482               1369318718       2048134200
 ## 6           659363944               1548844451       2208208395
-## 7           652270625                996622583       1648893208</code></pre>
+## 7           652270625                996584239       1648854864</code></pre>
 </div>
   </div>
 
@@ -182,7 +182,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Jacob Kaplan <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jacob Kaplan <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0601-0387" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
 </ul>
 </div>
 

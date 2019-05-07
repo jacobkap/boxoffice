@@ -1,7 +1,7 @@
 Package: boxoffice
 Title: Downloads Box Office Information for Given Dates
 Version: 1.2.2
-Authors@R: person("Jacob", "Kaplan", email = "jkkaplan6@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Jacob", "Kaplan", email = "jkkaplan6@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0601-0387"))
 Description: Download daily box office information (how much each movie earned
     in theaters) using data from either Box Office Mojo (<http://www.boxofficemojo.com/>) or
    The Numbers (<http://www.the-numbers.com/>).
