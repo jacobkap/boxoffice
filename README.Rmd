@@ -6,7 +6,7 @@ output:
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/boxoffice)](https://cran.r-project.org/package=boxoffice.png)
 [![Travis-CI Build Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://travis-ci.org/jacobkap/boxoffice) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice) [![Coverage status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
-[![](https://cranlogs.r-pkg.org/badges/boxoffice)](https://cran.rstudio.com/web/packages/boxoffice/index.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/boxoffice?color=blue)](https://cran.r-project.org/package=boxoffice)
 
 ## Overview
 
