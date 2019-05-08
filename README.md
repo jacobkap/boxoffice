@@ -5,7 +5,7 @@ Status](https://travis-ci.org/jacobkap/boxoffice.svg?branch=master)](https://tra
 Status](https://ci.appveyor.com/api/projects/status/github/jacobkap/boxoffice?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/boxoffice)
 [![Coverage
 status](https://codecov.io/gh/jacobkap/boxoffice/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/boxoffice?branch=master)
-[![](https://cranlogs.r-pkg.org/badges/boxoffice)](https://cran.rstudio.com/web/packages/boxoffice/index.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/boxoffice?color=blue)](https://cran.r-project.org/package=boxoffice)
 
 Overview
 --------
@@ -28,8 +28,8 @@ install.packages("boxoffice")
 devtools::install_github("jacobkap/boxoffice")
 ```
 
-Overview
---------
+Usage
+-----
 
 The `boxoffice()` function gets daily boxoffice information. In essence,
 it shows how well each movie performed on that day.
@@ -94,7 +94,7 @@ head(movies)
     ##   american_box_office international_box_office total_box_office
     ## 2           936662225               1116648995       2053311220
     ## 3           760507625               2015837654       2776345279
-    ## 4           700059566                647011693       1347071259
-    ## 5           678815482               1370000000       2048815482
+    ## 4           700059566                648198658       1348258224
+    ## 5           678815482               1369318718       2048134200
     ## 6           659363944               1548844451       2208208395
-    ## 7           652270625                996622583       1648893208
+    ## 7           652270625                996584239       1648854864
