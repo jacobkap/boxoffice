@@ -128,8 +128,11 @@
 </li>
 <li>The date of the data</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a></code></pre></div>
+<pre><code>## Registered S3 method overwritten by 'rvest':
+##   method            from
+##   read_xml.response xml2</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
 <pre><code>##                   movie      distributor   gross percent_change theaters
 ## 1           The Martian 20th Century Fox 4564809             31     3218
 ## 2       Bridge of Spies      Walt Disney 3588796             45     2873
@@ -152,23 +155,23 @@
 <li>Total international sales</li>
 <li>Total sales (domestic + international)</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>()</a></code></pre></div>
 <pre><code>## Please note that these numbers are not adjusted for inflation.</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a></code></pre></div>
 <pre><code>##   rank                                movie year_released
 ## 2    1 Star Wars Ep. VII: The Force Awakens          2015
-## 3    2                               Avatar          2009
-## 4    3                        Black Panther          2018
-## 5    4               Avengers: Infinity War          2018
-## 6    5                              Titanic          1997
-## 7    6                       Jurassic World          2015
+## 3    2                    Avengers: Endgame          2019
+## 4    3                               Avatar          2009
+## 5    4                        Black Panther          2018
+## 6    5               Avengers: Infinity War          2018
+## 7    6                              Titanic          1997
 ##   american_box_office international_box_office total_box_office
 ## 2           936662225               1116648995       2053311220
-## 3           760507625               2015837654       2776345279
-## 4           700059566                648198658       1348258224
-## 5           678815482               1369318718       2048134200
-## 6           659363944               1548844451       2208208395
-## 7           652270625                996584239       1648854864</code></pre>
+## 3           774530615               1842814023       2617344638
+## 4           760507625               2015837654       2776345279
+## 5           700059566                648198658       1348258224
+## 6           678815482               1369318718       2048134200
+## 7           659363944               1548844451       2208208395</code></pre>
 </div>
   </div>
 
@@ -187,7 +190,8 @@
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>GPL</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 <div class="developers">

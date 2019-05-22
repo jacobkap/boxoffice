@@ -156,12 +156,12 @@ domestic (American), international, and total ticket sales.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>top_grossing</span>()</div><div class='output co'>#&gt; <span class='message'>Please note that these numbers are not adjusted for inflation.</span></div><div class='output co'>#&gt;     rank                                              movie year_released
 #&gt; 2      1               Star Wars Ep. VII: The Force Awakens          2015
-#&gt; 3      2                                             Avatar          2009
-#&gt; 4      3                                      Black Panther          2018
-#&gt; 5      4                             Avengers: Infinity War          2018
-#&gt; 6      5                                            Titanic          1997
-#&gt; 7      6                                     Jurassic World          2015
-#&gt; 8      7                                  Avengers: Endgame          2019
+#&gt; 3      2                                  Avengers: Endgame          2019
+#&gt; 4      3                                             Avatar          2009
+#&gt; 5      4                                      Black Panther          2018
+#&gt; 6      5                             Avengers: Infinity War          2018
+#&gt; 7      6                                            Titanic          1997
+#&gt; 8      7                                     Jurassic World          2015
 #&gt; 9      8                                       The Avengers          2012
 #&gt; 10     9                  Star Wars Ep. VIII: The Last Jedi          2017
 #&gt; 11    10                                      Incredibles 2          2018
@@ -175,10 +175,10 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 19    18                              The Dark Knight Rises          2012
 #&gt; 20    19                                            Shrek 2          2004
 #&gt; 21    20                          ET: The Extra-Terrestrial          1982
-#&gt; 23    21                    The Hunger Games: Catching Fire          2013
-#&gt; 24    22         Pirates of the Caribbean: Dead Man’s Chest          2006
-#&gt; 25    23                                      The Lion King          1994
-#&gt; 26    24                                     Captain Marvel          2019
+#&gt; 23    21                                     Captain Marvel          2019
+#&gt; 24    22                    The Hunger Games: Catching Fire          2013
+#&gt; 25    23         Pirates of the Caribbean: Dead Man’s Chest          2006
+#&gt; 26    24                                      The Lion King          1994
 #&gt; 27    25                     Jurassic World: Fallen Kingdom          2018
 #&gt; 28    26                                        Toy Story 3          2010
 #&gt; 29    27                                       Wonder Woman          2017
@@ -257,12 +257,12 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 102  100                                       The Hangover          2009
 #&gt;     american_box_office international_box_office total_box_office
 #&gt; 2             936662225               1116648995       2053311220
-#&gt; 3             760507625               2015837654       2776345279
-#&gt; 4             700059566                648198658       1348258224
-#&gt; 5             678815482               1369318718       2048134200
-#&gt; 6             659363944               1548844451       2208208395
-#&gt; 7             652270625                996584239       1648854864
-#&gt; 8             631987456               1604530000       2236517456
+#&gt; 3             774530615               1842814023       2617344638
+#&gt; 4             760507625               2015837654       2776345279
+#&gt; 5             700059566                648198658       1348258224
+#&gt; 6             678815482               1369318718       2048134200
+#&gt; 7             659363944               1548844451       2208208395
+#&gt; 8             652270625                996584239       1648854864
 #&gt; 9             623279547                894656350       1517935897
 #&gt; 10            620181382                696540365       1316721747
 #&gt; 11            608581744                633950692       1242532436
@@ -276,10 +276,10 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 19            448139099                636300000       1084439099
 #&gt; 20            441226247                495781885        937008132
 #&gt; 21            435110554                357854772        792965326
-#&gt; 23            424668047                440200000        864868047
-#&gt; 24            423315812                642900000       1066215812
-#&gt; 25            421785283                564429585        986214868
-#&gt; 26            421057681                698763171       1119820852
+#&gt; 23            425230445                696612493       1121842938
+#&gt; 24            424668047                440200000        864868047
+#&gt; 25            423315812                642900000       1066215812
+#&gt; 26            421785283                564429585        986214868
 #&gt; 27            417719760                888053039       1305772799
 #&gt; 28            415004880                653874642       1068879522
 #&gt; 29            412563408                408569970        821133378
@@ -358,16 +358,16 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 102           277322503                188441583        465764086</div><div class='input'>
 <span class='fu'>top_grossing</span>(<span class='kw'>ranks</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>)</div><div class='output co'>#&gt; <span class='message'>Please note that these numbers are not adjusted for inflation.</span></div><div class='output co'>#&gt;   rank                                movie year_released american_box_office
 #&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015           936662225
-#&gt; 3    2                               Avatar          2009           760507625
-#&gt; 4    3                        Black Panther          2018           700059566
-#&gt; 5    4               Avengers: Infinity War          2018           678815482
-#&gt; 6    5                              Titanic          1997           659363944
+#&gt; 3    2                    Avengers: Endgame          2019           774530615
+#&gt; 4    3                               Avatar          2009           760507625
+#&gt; 5    4                        Black Panther          2018           700059566
+#&gt; 6    5               Avengers: Infinity War          2018           678815482
 #&gt;   international_box_office total_box_office
 #&gt; 2               1116648995       2053311220
-#&gt; 3               2015837654       2776345279
-#&gt; 4                648198658       1348258224
-#&gt; 5               1369318718       2048134200
-#&gt; 6               1548844451       2208208395</div><div class='input'>
+#&gt; 3               1842814023       2617344638
+#&gt; 4               2015837654       2776345279
+#&gt; 5                648198658       1348258224
+#&gt; 6               1369318718       2048134200</div><div class='input'>
 <span class='fu'>top_grossing</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"international"</span>)</div><div class='output co'>#&gt; <span class='message'>Please note that these numbers are not adjusted for inflation.</span></div><div class='output co'>#&gt;     rank                                             movie year_released
 #&gt; 2      1                                            Avatar          2009
 #&gt; 3      2                                 Avengers: Endgame          2019
@@ -471,7 +471,7 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 102  100                     Guardians of the Galaxy Vol 2          2017
 #&gt;     american_box_office international_box_office total_box_office
 #&gt; 2             760507625               2015837654       2776345279
-#&gt; 3             631987456               1604530000       2236517456
+#&gt; 3             774530615               1842814023       2617344638
 #&gt; 4             659363944               1548844451       2208208395
 #&gt; 5             678815482               1369318718       2048134200
 #&gt; 6             353007020               1165715774       1518722794
@@ -498,12 +498,12 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 28            161321843                718443294        879765137
 #&gt; 29            303003568                714000000       1017003568
 #&gt; 30            258366855                702000000        960366855
-#&gt; 31            421057681                698763171       1119820852
+#&gt; 31            425230445                696612493       1121842938
 #&gt; 32            620181382                696540365       1316721747
-#&gt; 33                    0                692832548        692832548
+#&gt; 33                   NA                692163684        692163684
 #&gt; 34            334191110                691300000       1025491110
 #&gt; 35            255119788                690457833        945577621
-#&gt; 36            216303339                682294941        898598280
+#&gt; 36            216303339                681565658        897868997
 #&gt; 37            200074175                679546748        879620923
 #&gt; 38            341268248                678436100       1019704348
 #&gt; 39            296131568                664300000        960431568
@@ -582,7 +582,7 @@ domestic (American), international, and total ticket sales.</p>
 #&gt; 11   10                       Avengers: Age of Ultron          2015
 #&gt;    american_box_office international_box_office total_box_office
 #&gt; 2            760507625               2015837654       2776345279
-#&gt; 3            631987456               1604530000       2236517456
+#&gt; 3            774530615               1842814023       2617344638
 #&gt; 4            659363944               1548844451       2208208395
 #&gt; 5            678815482               1369318718       2048134200
 #&gt; 6            353007020               1165715774       1518722794

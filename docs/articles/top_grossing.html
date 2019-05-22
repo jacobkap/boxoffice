@@ -86,7 +86,7 @@
       <h1>Get Top Grossing movies</h1>
                         <h4 class="author">Jacob Kaplan</h4>
             
-            <h4 class="date">2019-05-08</h4>
+            <h4 class="date">2019-05-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jacobkap/boxoffice/blob/master/vignettes/top_grossing.Rmd"><code>vignettes/top_grossing.Rmd</code></a></small>
       <div class="hidden name"><code>top_grossing.Rmd</code></div>
@@ -103,22 +103,25 @@
 <p>The parameter <code>type</code> lets you choose if you want the list of top grossing movies ordered by sales in “American”, by “international” sales, or “worldwide” sales. As some movies do better out of the America, this results in slightly differed ordering. The default selection is America.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># America</span></a>
 <a class="sourceLine" id="cb1-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>(<span class="dt">type =</span> <span class="st">"American"</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; 3    2                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; 4    3                        Black Panther          2018</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 5    4               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 6    5                              Titanic          1997</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 7    6                       Jurassic World          2015</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 2           936662225               1116648995       2053311220</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 3           760507625               2015837654       2776345279</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; 4           700059566                648198658       1348258224</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 5           678815482               1369318718       2048134200</span></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 6           659363944               1548844451       2208208395</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; 7           652270625                996584239       1648854864</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; Registered S3 method overwritten by 'rvest':</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt;   method            from</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt;   read_xml.response xml2</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt;   rank                                movie year_released</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 3    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 4    3                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt; 5    4                        Black Panther          2018</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 6    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 7    6                              Titanic          1997</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 2           936662225               1116648995       2053311220</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 3           774530615               1842814023       2617344638</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; 4           760507625               2015837654       2776345279</span></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">#&gt; 5           700059566                648198658       1348258224</span></a>
+<a class="sourceLine" id="cb1-20" title="20"><span class="co">#&gt; 6           678815482               1369318718       2048134200</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co">#&gt; 7           659363944               1548844451       2208208395</span></a></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># International</span></a>
 <a class="sourceLine" id="cb2-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>(<span class="dt">type =</span> <span class="st">"international"</span>)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
@@ -132,7 +135,7 @@
 <a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 7    6 Star Wars Ep. VII: The Force Awakens          2015</span></a>
 <a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
 <a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 2           760507625               2015837654       2776345279</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 3           631987456               1604530000       2236517456</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 3           774530615               1842814023       2617344638</span></a>
 <a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 4           659363944               1548844451       2208208395</span></a>
 <a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; 5           678815482               1369318718       2048134200</span></a>
 <a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; 6           353007020               1165715774       1518722794</span></a>
@@ -150,7 +153,7 @@
 <a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; 7    6                       Jurassic World          2015</span></a>
 <a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
 <a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 2           760507625               2015837654       2776345279</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 3           631987456               1604530000       2236517456</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 3           774530615               1842814023       2617344638</span></a>
 <a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 4           659363944               1548844451       2208208395</span></a>
 <a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 5           936662225               1116648995       2053311220</span></a>
 <a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 6           678815482               1369318718       2048134200</span></a>
@@ -165,18 +168,18 @@
 <a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt;   rank                                movie year_released</span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 3    2                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 4    3                        Black Panther          2018</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 5    4               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 6    5                              Titanic          1997</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; 7    6                       Jurassic World          2015</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 3    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 4    3                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 5    4                        Black Panther          2018</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 6    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; 7    6                              Titanic          1997</span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
 <a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 2           936662225               1116648995       2053311220</span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 3           760507625               2015837654       2776345279</span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 4           700059566                648198658       1348258224</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 5           678815482               1369318718       2048134200</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 6           659363944               1548844451       2208208395</span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 7           652270625                996584239       1648854864</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 3           774530615               1842814023       2617344638</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 4           760507625               2015837654       2776345279</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 5           700059566                648198658       1348258224</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 6           678815482               1369318718       2048134200</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 7           659363944               1548844451       2208208395</span></a></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># </span></a>
 <a class="sourceLine" id="cb5-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/top_grossing">top_grossing</a></span>(<span class="dt">ranks =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
@@ -194,13 +197,13 @@
 <a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt; 36     34                               Frozen          2013</span></a>
 <a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt; 57     55                         Spider-Man 3          2007</span></a>
 <a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt; 66     64                        Suicide Squad          2016</span></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt; 1029 1000                    Gangs of New York          2002</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt; 1029 1000                            Backdraft          1991</span></a>
 <a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt;      american_box_office international_box_office total_box_office</span></a>
 <a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; 2              936662225               1116648995       2053311220</span></a>
 <a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; 36             400738009                871731901       1272469910</span></a>
 <a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; 57             336530303                558329927        894860230</span></a>
 <a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; 66             325100054                420959833        746059887</span></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 1029            77730500                105394121        183124621</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 1029            77868585                 74500000        152368585</span></a></code></pre></div>
 </div>
   </div>
 

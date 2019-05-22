@@ -86,7 +86,7 @@
       <h1>Get Daily Movie Sales</h1>
                         <h4 class="author">Jacob Kaplan</h4>
             
-            <h4 class="date">2019-05-08</h4>
+            <h4 class="date">2019-05-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jacobkap/boxoffice/blob/master/vignettes/get_daily_box_office_info.Rmd"><code>vignettes/get_daily_box_office_info.Rmd</code></a></small>
       <div class="hidden name"><code>get_daily_box_office_info.Rmd</code></div>
@@ -116,21 +116,24 @@
 </ol>
 <p>In essence, it shows how well each movie performed on a given day.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/boxoffice/topics/boxoffice">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/as.Date">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(movies)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; [1] 46  9</span></a>
-<a class="sourceLine" id="cb1-4" title="4">movies[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, ]</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt;                   movie      distributor   gross percent_change theaters</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; 1           The Martian 20th Century Fox 4564809             31     3218</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; 2       Bridge of Spies      Walt Disney 3588796             45     2873</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; 3            Goosebumps    Sony Pictures 3326075              9     3618</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 4 The Last Witch Hunter        Lionsgate 2023321             36     3082</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt;   per_theater total_gross days       date</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt; 1        1419   179446657   30 2015-10-31</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 2        1249    43200132   16 2015-10-31</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 3         919    53277832   16 2015-10-31</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; 4         656    17377961    9 2015-10-31</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 5         643   153858782   37 2015-10-31</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">#&gt; Registered S3 method overwritten by 'rvest':</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt;   method            from</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt;   read_xml.response xml2</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(movies)</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; [1] 46  9</span></a>
+<a class="sourceLine" id="cb1-7" title="7">movies[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, ]</a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt;                   movie      distributor   gross percent_change theaters</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 1           The Martian 20th Century Fox 4564809             31     3218</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 2       Bridge of Spies      Walt Disney 3588796             45     2873</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 3            Goosebumps    Sony Pictures 3326075              9     3618</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt; 4 The Last Witch Hunter        Lionsgate 2023321             36     3082</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt;   per_theater total_gross days       date</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; 1        1419   179446657   30 2015-10-31</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 2        1249    43200132   16 2015-10-31</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 3         919    53277832   16 2015-10-31</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; 4         656    17377961    9 2015-10-31</span></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">#&gt; 5         643   153858782   37 2015-10-31</span></a></code></pre></div>
 <p>There are three parameters for <code><a href="../reference/boxoffice.html">boxoffice()</a></code>: <code>dates</code>, <code>site</code>, and <code>top_n</code>.</p>
 <p><code>dates</code> are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. <code>site</code> indicates which site you want to scrape: the-numbers.com or boxofficemojo.com. The accepted inputs are “numbers” which is the default site or “mojo”. Both sites are very similar and provide nearly identical results. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value.</p>
 <p>Note that the terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change or only scrape from the-numbers.com.</p>
