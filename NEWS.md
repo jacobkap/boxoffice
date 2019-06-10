@@ -1,3 +1,7 @@
+# boxoffice 1.2.3
+
+* Fix tests due to site updating box office totals.
+
 # boxoffice 1.2.2
 
 * Fix tests due to site updating box office totals.
