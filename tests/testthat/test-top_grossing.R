@@ -76,7 +76,7 @@ test_that("correct column names and type", {
 })
 
 
-test_that("columns have right values", {
+test_that("Domestic - top grossing columns have right values", {
   skip_on_cran()
   expect_equal(head(example$rank), 1:6)
   expect_equal(head(example$year_released), c(2015,
@@ -92,23 +92,27 @@ test_that("columns have right values", {
                                       "Avengers: Infinity War",
                                       "Titanic"))
   expect_equal(head(example$american_box_office), c(936662225,
-                                                    824365940,
+                                                    830700214,
                                                     760507625,
                                                     700059566,
                                                     678815482,
                                                     659363944))
   expect_equal(head(example$international_box_office), c(1116648995,
-                                                         1906200000,
+                                                         1911976388,
                                                          2015837654,
                                                          648198658,
                                                          1369318718,
                                                          1548844451))
   expect_equal(head(example$total_box_office), c(2053311220,
-                                                 2730565940,
+                                                 2742676602,
                                                  2776345279,
                                                  1348258224,
                                                  2048134200,
                                                  2208208395))
+
+})
+
+test_that("International - top grossing columns have right values", {
 
   expect_equal(head(example_international$rank), 1:6)
   expect_equal(head(example_international$year_released), c(2009,
@@ -126,25 +130,29 @@ test_that("columns have right values", {
                  "Star Wars Ep. VII: The Force Awakens"))
   expect_equal(head(example_international$international_box_office),
                c(2015837654,
-                 1906200000,
+                 1911976388,
                  1548844451,
                  1369318718,
                  1165715774,
                  1116648995))
   expect_equal(head(example_international$american_box_office),
                c(760507625,
-                 824365940,
+                 830700214,
                  659363944,
                  678815482,
                  353007020,
                  936662225))
   expect_equal(head(example_international$total_box_office),
                c(2776345279,
-                 2730565940,
+                 2742676602,
                  2208208395,
                  2048134200,
                  1518722794,
                  2053311220))
+
+})
+
+test_that("Worldwide - top grossing columns have right values", {
 
   expect_equal(head(example_worldwide$rank), 1:6)
   expect_equal(head(example_worldwide$year_released), c(2009,
@@ -162,21 +170,21 @@ test_that("columns have right values", {
                  "Jurassic World"))
   expect_equal(head(example_worldwide$total_box_office),
                c(2776345279,
-                 2730565940,
+                 2742676602,
                  2208208395,
                  2053311220,
                  2048134200,
                  1648854864))
   expect_equal(head(example_worldwide$american_box_office),
                c(760507625,
-                 824365940,
+                 830700214,
                  659363944,
                  936662225,
                  678815482,
                  652270625))
   expect_equal(head(example_worldwide$international_box_office),
                c(2015837654,
-                 1906200000,
+                 1911976388,
                  1548844451,
                  1116648995,
                  1369318718,
