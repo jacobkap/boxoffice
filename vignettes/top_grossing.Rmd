@@ -4,7 +4,7 @@ author: "Jacob Kaplan"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Get top grossing movies}
+  %\VignetteIndexEntry{Get Top Grossing Movies}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
