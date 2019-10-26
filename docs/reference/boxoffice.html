@@ -8,21 +8,25 @@
 
 <title>Download Information on Box Office Results for Movies — boxoffice • boxoffice</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Download Information on Box Office Results for Movies — boxoffice" />
 
+<meta property="og:title" content="Download Information on Box Office Results for Movies — boxoffice" />
 <meta property="og:description" content="Download Information on Box Office Results for Movies" />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -45,6 +50,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -63,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">boxoffice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
       </span>
     </div>
 
@@ -71,7 +77,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -97,11 +103,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/jacobkap/boxoffice">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -112,6 +117,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -123,13 +129,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Download Information on Box Office Results for Movies</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>boxoffice</span>(<span class='no'>dates</span>, <span class='kw'>site</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"mojo"</span>, <span class='st'>"numbers"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>boxoffice</span>(<span class='no'>dates</span>, <span class='kw'>site</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"mojo"</span>, <span class='st'>"numbers"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -149,16 +153,15 @@ all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
 movies per date).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Data frame returning info on the name of the movie, its daily gross,
  gross-to-date, and gross-per-theater for each date inputted.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Uses the-numbers.com website.</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
 #&gt; 1    Star Wars Ep. VIII: The Las…          Walt Disney 27459557             56
 #&gt; 2  Jumanji: Welcome to the Jungle        Sony Pictures 19138553            111
 #&gt; 3                 Pitch Perfect 3            Universal  6496365            147
@@ -249,128 +252,188 @@ movies per date).</p></td>
 #&gt; 43        1         160       92117   67 2017-12-25
 #&gt; 44        1         117       12620   11 2017-12-25</div><div class='input'>
 <span class='co'># Uses boxofficemojo.com website.</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>site</span> <span class='kw'>=</span> <span class='st'>"mojo"</span>)</div><div class='output co'>#&gt; <span class='message'>The terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change the site parameter to 'numbers' to use the-numbers.com which does not forbid scraping without permission.</span></div><div class='output co'>#&gt;                                        movie distributor    gross
-#&gt; 1                   Star Wars: The Last Jedi          BV 27459557
-#&gt; 2             Jumanji: Welcome to the Jungle        Sony 19138553
-#&gt; 3                            Pitch Perfect 3        Uni.  6496365
-#&gt; 4                       The Greatest Showman         Fox  5604273
-#&gt; 5                                       Coco          BV  2805466
-#&gt; 6                                  Ferdinand         Fox  2801780
-#&gt; 7                                 Downsizing        Par.  2715843
-#&gt; 8                 All the Money in the World        TriS  2565393
-#&gt; 9                             Father Figures          WB  2192067
-#&gt; 10                              Darkest Hour       Focus  1622510
-#&gt; 11                        The Shape of Water        FoxS  1419891
-#&gt; 12                              Molly's Game         STX  1172036
-#&gt; 13                           Tiger Zinda Hai        Yash   785745
-#&gt; 14                                    Wonder         LGF   710214
-#&gt; 15                            Daddy's Home 2        Par.   544612
-#&gt; 16                            Justice League          WB   435091
-#&gt; 17                                 Lady Bird         A24   415989
-#&gt; 18                            Thor: Ragnarok          BV   329457
-#&gt; 19                       The Disaster Artist         A24   325057
-#&gt; 20                                  The Star        Sony   238704
-#&gt; 21                                  The Post         Fox   236046
-#&gt; 22                      Call Me by Your Name         SPC   229888
-#&gt; 23                                  I, Tonya        Neon   220806
-#&gt; 24 Three Billboards Outside Ebbing, Missouri        FoxS   207975
-#&gt; 25       Murder on the Orient Express (2017)         Fox   203411
-#&gt; 26                            Phantom Thread       Focus   127272
-#&gt; 27                              Youth (2017)          CL   116922
-#&gt; 28       Along with the Gods: The Two Worlds       WGUSA    99644
-#&gt; 29                      A Bad Moms Christmas         STX    60302
-#&gt; 30                              Wonder Wheel      Amazon    42778
-#&gt; 31            The Man Who Invented Christmas         BST    33190
-#&gt; 32                                  Geostorm          WB    16062
-#&gt; 33                            Loving Vincent   Good Deed    12235
-#&gt; 34                            Only The Brave        Sony     9790
-#&gt; 35                                  Hostiles       ENTMP     9606
-#&gt; 36                       The Florida Project         A24     9430
-#&gt; 37                         Blade Runner 2049          WB     8433
-#&gt; 38                                The Square       Magn.     7250
-#&gt; 39                                 Happy End         SPC     7131
-#&gt; 40              The Thousand Faces Of Dunjia       WGUSA     7092
-#&gt; 41                     Roman J. Israel, Esq.        Sony     4786
-#&gt; 42              Same Kind of Different as Me         PFR     3069
-#&gt; 43                        Victoria and Abdul       Focus     2840
-#&gt; 44       The Polar Express (2017 re-release)          WB     2603
-#&gt; 45                    The Other Side of Hope        Jan.     2386
-#&gt; 46                                 Big Sonia       Argo.     2311
-#&gt; 47                             The Swindlers       WGUSA     2162
-#&gt; 48                             The Lucky Man      Indic.     1948
-#&gt; 49                                  Marshall         ORF     1937
-#&gt; 50                           The Breadwinner          GK      792
-#&gt; 51                          My Friend Dahmer          FR      784
-#&gt; 52                        Let there be Light         ADC      736
-#&gt; 53              The Killing of a Sacred Deer         A24      602
-#&gt; 54                                    Thelma       Orch.      593
-#&gt; 55                                 Novitiate         SPC      483
-#&gt; 56                           The Paris Opera          FM      177
-#&gt; 57                    BPM (Beats Per Minute)       Orch.      160
-#&gt; 58                                 Permanent       Magn.      141
-#&gt; 59           Birdboy: The Forgotten Children          GK      117
-#&gt;    percent_change theaters per_theater total_gross days       date
-#&gt; 1              56     4232        6489   395627411   11 2017-12-25
-#&gt; 2             112     3765        5083    71913848    6 2017-12-25
-#&gt; 3             147     3447        1885    26424890    4 2017-12-25
-#&gt; 4             162     3006        1864    19008847    6 2017-12-25
-#&gt; 5             113     2111        1329   164307743   34 2017-12-25
-#&gt; 6              84     3630         772    29601410   11 2017-12-25
-#&gt; 7             135     2668        1018     7670130    4 2017-12-25
-#&gt; 8              NA     2074        1237     2565393    1 2017-12-25
-#&gt; 9             200     2902         755     5479518    4 2017-12-25
-#&gt; 10             73      806        2013     8367532   34 2017-12-25
-#&gt; 11             95      730        1945     8986046   25 2017-12-25
-#&gt; 12             NA      271        4325     1172036    1 2017-12-25
-#&gt; 13             33      299        2628     2572853    4 2017-12-25
-#&gt; 14             77      794         894   115654826   39 2017-12-25
-#&gt; 15            150     1073         508    99751582   46 2017-12-25
-#&gt; 16             76     1101         395   223128877   39 2017-12-25
-#&gt; 17             60      372        1118    28715314   53 2017-12-25
-#&gt; 18             64      701         470   309454093   53 2017-12-25
-#&gt; 19             77      488         666    16020034   25 2017-12-25
-#&gt; 20            -13     1106         216    38594870   39 2017-12-25
-#&gt; 21             35        9       26227      762057    4 2017-12-25
-#&gt; 22             NA      114        2017     3262454   32 2017-12-25
-#&gt; 23            108       43        5135     1306911   18 2017-12-25
-#&gt; 24             43      264         788    22949085   46 2017-12-25
-#&gt; 25             58      361         563    99444878   46 2017-12-25
-#&gt; 26             NA        4       31818      127272    1 2017-12-25
-#&gt; 27             NA       34        3439     1157273   11 2017-12-25
-#&gt; 28             NA       17        5861      285190    4 2017-12-25
-#&gt; 29            122      275         219    71571546   55 2017-12-25
-#&gt; 30             67      113         379     1205919   25 2017-12-25
-#&gt; 31             48      146         227     5419083   34 2017-12-25
-#&gt; 32            170      110         146    33473188   67 2017-12-25
-#&gt; 33             NA       55         222     6110430   95 2017-12-25
-#&gt; 34            145       86         114    18106612   67 2017-12-25
-#&gt; 35             65        3        3202       32455    4 2017-12-25
-#&gt; 36             46       43         219     5204890   81 2017-12-25
-#&gt; 37             52       75         112    91564672   81 2017-12-25
-#&gt; 38             NA       17         426     1176775   60 2017-12-25
-#&gt; 39             NA        3        2377       30222    4 2017-12-25
-#&gt; 40             NA        4        1773      109690   11 2017-12-25
-#&gt; 41             63       49          98    11825352   39 2017-12-25
-#&gt; 42            135       45          68     6370123   67 2017-12-25
-#&gt; 43            114       24         118    22205730   95 2017-12-25
-#&gt; 44            -81        0           0      843610   39 2017-12-25
-#&gt; 45             NA        4         597      118777   25 2017-12-25
-#&gt; 46             53        3         770       94741   39 2017-12-25
-#&gt; 47             NA        1        2162      240979   25 2017-12-25
-#&gt; 48             NA        3         649        6904 -331 2017-12-25
-#&gt; 49             83       58          33     9450507   74 2017-12-25
-#&gt; 50             27       10          79      210278   39 2017-12-25
-#&gt; 51             NA        3         261     1293780   53 2017-12-25
-#&gt; 52              1        8          92     7203504   60 2017-12-25
-#&gt; 53              3        8          75     2289085   67 2017-12-25
-#&gt; 54             56        9          66      128627   46 2017-12-25
-#&gt; 55             NA        8          60      563231   60 2017-12-25
-#&gt; 56             NA        2          89       51772   69 2017-12-25
-#&gt; 57            -36        1         160       92117   67 2017-12-25
-#&gt; 58             NA        3          47        9238   11 2017-12-25
-#&gt; 59            -25        1         117       12620   11 2017-12-25</div><div class='input'>
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>site</span> <span class='kw'>=</span> <span class='st'>"mojo"</span>)</div><div class='output co'>#&gt; <span class='message'>The terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change the site parameter to 'numbers' to use the-numbers.com which does not forbid scraping without permission.</span></div><div class='output co'>#&gt;                                        movie
+#&gt; 1    Star Wars: Episode VIII - The Last Jedi
+#&gt; 2             Jumanji: Welcome to the Jungle
+#&gt; 3                            Pitch Perfect 3
+#&gt; 4                       The Greatest Showman
+#&gt; 5                                       Coco
+#&gt; 6                                  Ferdinand
+#&gt; 7                                 Downsizing
+#&gt; 8                 All the Money in the World
+#&gt; 9                             Father Figures
+#&gt; 10                              Darkest Hour
+#&gt; 11                        The Shape of Water
+#&gt; 12                              Molly's Game
+#&gt; 13                           Tiger Zinda Hai
+#&gt; 14                                    Wonder
+#&gt; 15                            Daddy's Home 2
+#&gt; 16                            Justice League
+#&gt; 17                                 Lady Bird
+#&gt; 18                            Thor: Ragnarok
+#&gt; 19                       The Disaster Artist
+#&gt; 20                                  The Star
+#&gt; 21                                  The Post
+#&gt; 22                      Call Me by Your Name
+#&gt; 23                                  I, Tonya
+#&gt; 24 Three Billboards Outside Ebbing, Missouri
+#&gt; 25              Murder on the Orient Express
+#&gt; 26                            Phantom Thread
+#&gt; 27                                     Youth
+#&gt; 28       Along with the Gods: The Two Worlds
+#&gt; 29                      A Bad Moms Christmas
+#&gt; 30                              Wonder Wheel
+#&gt; 31            The Man Who Invented Christmas
+#&gt; 32                                  Geostorm
+#&gt; 33                            Loving Vincent
+#&gt; 34                            Only the Brave
+#&gt; 35                                  Hostiles
+#&gt; 36                       The Florida Project
+#&gt; 37                         Blade Runner 2049
+#&gt; 38                                The Square
+#&gt; 39                                 Happy End
+#&gt; 40              The Thousand Faces of Dunjia
+#&gt; 41                     Roman J. Israel, Esq.
+#&gt; 42              Same Kind of Different as Me
+#&gt; 43                          Victoria &amp; Abdul
+#&gt; 44        The Polar Express2017 IMAX Release
+#&gt; 45                    The Other Side of Hope
+#&gt; 46                                 Big Sonia
+#&gt; 47                             The Swindlers
+#&gt; 48                             The Lucky Man
+#&gt; 49                                  Marshall
+#&gt; 50                           The Breadwinner
+#&gt; 51                          My Friend Dahmer
+#&gt; 52                        Let There Be Light
+#&gt; 53              The Killing of a Sacred Deer
+#&gt; 54                                    Thelma
+#&gt; 55                                 Novitiate
+#&gt; 56                           The Paris Opera
+#&gt; 57                    BPM (Beats Per Minute)
+#&gt; 58                                 Permanent
+#&gt; 59           Birdboy: The Forgotten Children
+#&gt;                              distributor    gross percent_change theaters
+#&gt; 1    Walt Disney Studios Motion Pictures 27459557           55.8     4232
+#&gt; 2                Sony Pictures Releasing 19138553          111.5     3765
+#&gt; 3                     Universal Pictures  6496365          146.7     3447
+#&gt; 4                                    Fox  5604273          161.8     3006
+#&gt; 5    Walt Disney Studios Motion Pictures  2805466          112.6     2111
+#&gt; 6                                    Fox  2801780           83.7     3630
+#&gt; 7                     Paramount Pictures  2715843          135.0     2668
+#&gt; 8                          Concorde Film  2565393             NA     2074
+#&gt; 9                           Warner Bros.  2192067          199.7     2902
+#&gt; 10                        Focus Features  1622510           73.0      806
+#&gt; 11              Fox Searchlight Pictures  1419891           95.4      730
+#&gt; 12                     STX Entertainment  1172036             NA      271
+#&gt; 13                                     -   785745           33.3      299
+#&gt; 14                             Lionsgate   710214           76.6      794
+#&gt; 15                    Paramount Pictures   544612          149.5     1073
+#&gt; 16                          Warner Bros.   435091           75.9     1101
+#&gt; 17                                   A24   415989           60.4      372
+#&gt; 18   Walt Disney Studios Motion Pictures   329457           64.3      701
+#&gt; 19                                   A24   325057           77.2      488
+#&gt; 20               Sony Pictures Releasing   238704          -12.7     1106
+#&gt; 21                                   Fox   236046           35.2        9
+#&gt; 22                Sony Pictures Classics   229888             NA      114
+#&gt; 23                                  Neon   220806          108.3       43
+#&gt; 24              Fox Searchlight Pictures   207975           42.5      264
+#&gt; 25                                   Fox   203411           58.3      361
+#&gt; 26                        Focus Features   127272             NA        4
+#&gt; 27          China Lion Film Distribution   116922             NA       34
+#&gt; 28             Well Go USA Entertainment    99644             NA       17
+#&gt; 29                     STX Entertainment    60302          121.9      275
+#&gt; 30                        Amazon Studios    42778           67.1      113
+#&gt; 31                 Bleecker Street Media    33190           47.7      146
+#&gt; 32                          Warner Bros.    16062          169.5      110
+#&gt; 33               Good Deed Entertainment    12235             NA       55
+#&gt; 34               Sony Pictures Releasing     9790          145.2       86
+#&gt; 35 Entertainment Studios Motion Pictures     9606           64.5        3
+#&gt; 36                                   A24     9430           45.9       43
+#&gt; 37                          Warner Bros.     8433           51.8       75
+#&gt; 38                     Magnolia Pictures     7250             NA       17
+#&gt; 39                Sony Pictures Classics     7131             NA        3
+#&gt; 40             Well Go USA Entertainment     7092             NA        4
+#&gt; 41               Sony Pictures Releasing     4786           62.7       49
+#&gt; 42               Pure Flix Entertainment     3069          135.2       45
+#&gt; 43                        Focus Features     2840          114.3       24
+#&gt; 44                          Warner Bros.     2603          -80.7       NA
+#&gt; 45                           Janus Films     2386             NA        4
+#&gt; 46                        Argot Pictures     2311           52.5        3
+#&gt; 47             Well Go USA Entertainment     2162             NA        1
+#&gt; 48                      Indican Pictures     1948             NA        3
+#&gt; 49                  Open Road Films (II)     1937           82.9       58
+#&gt; 50                                 GKIDS      792           26.5       10
+#&gt; 51                              FilmRise      784             NA        3
+#&gt; 52            Atlas Distribution Company      736            1.1        8
+#&gt; 53                                   A24      602            3.4        8
+#&gt; 54                           The Orchard      593           56.1        9
+#&gt; 55                Sony Pictures Classics      483             NA        8
+#&gt; 56                         Film Movement      177             NA        2
+#&gt; 57                           The Orchard      160          -35.5        1
+#&gt; 58                     Magnolia Pictures      141             NA        3
+#&gt; 59                                 GKIDS      117          -25.0        1
+#&gt;    per_theater total_gross days       date
+#&gt; 1         6488   395627411   11 2017-12-25
+#&gt; 2         5083    71913848    6 2017-12-25
+#&gt; 3         1884    26424890    4 2017-12-25
+#&gt; 4         1864    19008847    6 2017-12-25
+#&gt; 5         1328   164307743   34 2017-12-25
+#&gt; 6          771    29601410   11 2017-12-25
+#&gt; 7         1017     7670130    4 2017-12-25
+#&gt; 8         1236     2565393    1 2017-12-25
+#&gt; 9          755     5479518    4 2017-12-25
+#&gt; 10        2013     8367532   34 2017-12-25
+#&gt; 11        1945     8986046   25 2017-12-25
+#&gt; 12        4324     1172036    1 2017-12-25
+#&gt; 13        2627     2572853    4 2017-12-25
+#&gt; 14         894   115654826   39 2017-12-25
+#&gt; 15         507    99751582   46 2017-12-25
+#&gt; 16         395   223128877   39 2017-12-25
+#&gt; 17        1118    28715314   53 2017-12-25
+#&gt; 18         469   309454093   53 2017-12-25
+#&gt; 19         666    16020034   25 2017-12-25
+#&gt; 20         215    38594870   39 2017-12-25
+#&gt; 21       26227      762057    4 2017-12-25
+#&gt; 22        2016     3262454   32 2017-12-25
+#&gt; 23        5135     1306911   18 2017-12-25
+#&gt; 24         787    22949085   46 2017-12-25
+#&gt; 25         563    99444878   46 2017-12-25
+#&gt; 26       31818      127272    1 2017-12-25
+#&gt; 27        3438     1157273   11 2017-12-25
+#&gt; 28        5861      285190    4 2017-12-25
+#&gt; 29         219    71571546   55 2017-12-25
+#&gt; 30         378     1205919   25 2017-12-25
+#&gt; 31         227     5419083   34 2017-12-25
+#&gt; 32         146    33473188   67 2017-12-25
+#&gt; 33         222     6110430   95 2017-12-25
+#&gt; 34         113    18106612   67 2017-12-25
+#&gt; 35        3202       32455    4 2017-12-25
+#&gt; 36         219     5204890   81 2017-12-25
+#&gt; 37         112    91564672   81 2017-12-25
+#&gt; 38         426     1176775   60 2017-12-25
+#&gt; 39        2377       30222    4 2017-12-25
+#&gt; 40        1773      109690   11 2017-12-25
+#&gt; 41          97    11825352   39 2017-12-25
+#&gt; 42          68     6370123   67 2017-12-25
+#&gt; 43         118    22205730   95 2017-12-25
+#&gt; 44          NA      843610   39 2017-12-25
+#&gt; 45         596      118777   25 2017-12-25
+#&gt; 46         770       94741   39 2017-12-25
+#&gt; 47        2162      240979   25 2017-12-25
+#&gt; 48         649        6904    5 2017-12-25
+#&gt; 49          33     9450507   74 2017-12-25
+#&gt; 50          79      210278   39 2017-12-25
+#&gt; 51         261     1293780   53 2017-12-25
+#&gt; 52          92     7203504   60 2017-12-25
+#&gt; 53          75     2289085   67 2017-12-25
+#&gt; 54          65      128627   46 2017-12-25
+#&gt; 55          60      563231   60 2017-12-25
+#&gt; 56          88       51772   69 2017-12-25
+#&gt; 57         160       92117   67 2017-12-25
+#&gt; 58          47        9238   11 2017-12-25
+#&gt; 59         117       12620   11 2017-12-25</div><div class='input'>
 <span class='co'># Returns only top 10 (daily) grossing movies</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt;                             movie        distributor    gross percent_change
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt;                             movie        distributor    gross percent_change
 #&gt; 1    Star Wars Ep. VIII: The Las…        Walt Disney 27459557             56
 #&gt; 2  Jumanji: Welcome to the Jungle      Sony Pictures 19138553            111
 #&gt; 3                 Pitch Perfect 3          Universal  6496365            147
@@ -392,7 +455,7 @@ movies per date).</p></td>
 #&gt; 8      2074        1237     2565393    1 2017-12-25
 #&gt; 9      2902         755     5479518    4 2017-12-25
 #&gt; 10      806        2013     8367532   34 2017-12-25</div><div class='input'><span class='co'># Uses the dates of Christmas and New Years Eve 2017</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.Date'>as.Date</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"2017-12-25"</span>, <span class='st'>"2017-12-31"</span>)))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-12-25"</span>, <span class='st'>"2017-12-31"</span>)))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
 #&gt; 1    Star Wars Ep. VIII: The Las…          Walt Disney 27459557             56
 #&gt; 2  Jumanji: Welcome to the Jungle        Sony Pictures 19138553            111
 #&gt; 3                 Pitch Perfect 3            Universal  6496365            147
@@ -568,14 +631,13 @@ movies per date).</p></td>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -583,13 +645,16 @@ movies per date).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

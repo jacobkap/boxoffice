@@ -92,7 +92,7 @@ test_that("Domestic - top grossing columns have right values", {
                                       "Avengers: Infinity War",
                                       "Titanic"))
   expect_equal(head(example$american_box_office), c(936662225,
-                                                    858356001,
+                                                    858373000,
                                                     760507625,
                                                     700059566,
                                                     678815482,
@@ -104,7 +104,7 @@ test_that("Domestic - top grossing columns have right values", {
                                                          1369318718,
                                                          1548844451))
   expect_equal(head(example$total_box_office), c(2053311220,
-                                                 2795456001,
+                                                 2795473000,
                                                  2789705275,
                                                  1348258224,
                                                  2048134200,
@@ -137,14 +137,14 @@ test_that("International - top grossing columns have right values", {
                  1116648995))
   expect_equal(head(example_international$american_box_office),
                c(760507625,
-                 858356001 	,
+                 858373000 	,
                  659363944,
                  678815482,
                  353007020,
                  936662225))
   expect_equal(head(example_international$total_box_office),
                c(2789705275,
-                 2795456001,
+                 2795473000,
                  2208208395,
                  2048134200,
                  1518722794,
@@ -169,14 +169,14 @@ test_that("Worldwide - top grossing columns have right values", {
                  "Avengers: Infinity War",
                  "Jurassic World"))
   expect_equal(head(example_worldwide$total_box_office),
-               c(2795456001,
+               c(2795473000,
                  2789705275,
                  2208208395,
                  2053311220,
                  2048134200,
                  1648854864))
   expect_equal(head(example_worldwide$american_box_office),
-               c(858356001,
+               c(858373000,
                  760507625,
                  659363944,
                  936662225,

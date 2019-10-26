@@ -30,7 +30,7 @@ boxoffice <- function(dates,
 
   useragent <- paste0(
     "Mozilla/5.0 (compatible; a bot using the R boxoffice",
-                        " package; https://github.com/jacobkap/boxoffice/)")
+    " package; https://github.com/jacobkap/boxoffice/)")
 
   if (identical(site, c("mojo", "numbers"))) site <- "numbers"
 
@@ -42,12 +42,12 @@ boxoffice <- function(dates,
   }
 
   if (!tolower(site) %in% c("mojo", "numbers")) {
-    stop("site input must be either 'mojo' or 'numbers'")
+    stop("Site input must be either 'mojo' or 'numbers'")
   }
 
   if ( (!is.null(top_n) && length(top_n) != 1) ||
-      (!is.null(top_n) && top_n <= 0) ) {
-    stop("top_n must be a single, positive number.")
+       (!is.null(top_n) && top_n <= 0) ) {
+    stop("top_n must be a single, positive integer.")
   }
 
   if (site == "mojo") {
@@ -60,44 +60,47 @@ boxoffice <- function(dates,
 
   url_start <- "https://www.the-numbers.com/box-office-chart/daily/"
   if (site == "mojo") {
-    url_start <- "http://www.boxofficemojo.com/daily/chart/?view=1day&sortdate="
+    url_start <- "http://www.boxofficemojo.com/date/"
+    url_dates <- dates
+  } else {
+    url_dates <- gsub("-", "/", dates)
   }
 
   results <- vector("list", length = length(dates))
-  url_dates <- gsub("-", "/", dates)
+
   for (i in seq_along(url_dates)) {
 
-        page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
-        if (httr::http_error(page)) {
-          Sys.sleep(0.5)
-          page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
-        }
-        if (httr::http_error(page)) {
-          page <- NULL
-        }
+    page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
+    if (httr::http_error(page)) {
+      Sys.sleep(0.5)
+      page <- httr::GET(paste0(url_start, url_dates[i]), httr::user_agent(useragent))
+    }
+    if (httr::http_error(page)) {
+      page <- NULL
+    }
 
     page <- httr::content(page, "parsed", encoding = "UTF-8")
     if (is.null(page)) {
       message(url_dates[i], "could not be scraped. Please check the website to make sure the date is available or check your internet connection.")
     } else {
-    if (tolower(site) == "mojo") {
-      page <- mojo_site(page)
-    } else {
-      page <- numbers_site(page)
-    }
+      if (tolower(site) == "mojo") {
+        page <- mojo_site(page)
+      } else {
+        page <- numbers_site(page)
+      }
 
-    page <- fix_columns(page)
+      page <- fix_columns(page)
 
-    # Makes numeric and removes $ and , values from columns -------------------
-    page[, 3:ncol(page)]  <- sapply(page[3:ncol(page)], numeric_cleaner)
-    page$date <- dates[i]
+      # Makes numeric and removes $ and , values from columns -------------------
+      page[, 3:ncol(page)]  <- sapply(page[3:ncol(page)], numeric_cleaner)
+      page$date <- dates[i]
 
-    if (!is.null(top_n)) {
-      top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
-      page <- page[1:top_n, ]
-    }
+      if (!is.null(top_n)) {
+        top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
+        page <- page[1:top_n, ]
+      }
 
-    results[[i]] <- page
+      results[[i]] <- page
     }
   }
 
@@ -106,9 +109,8 @@ boxoffice <- function(dates,
   results <- as.data.frame(results)
 
   if (nrow(results) > 0) {
-  return(results)
+    return(results)
   } else {
     stop("No results found. Please check the website to make sure the dates are available.")
   }
-
 }

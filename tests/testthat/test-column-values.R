@@ -15,16 +15,16 @@ test_that("numeric columns are accurate", {
                  2805466, 483, 177,
                  160, 141, 117))
   expect_equal(christmas_mojo$percent_change[c(1:5, 55:59)],
-               c(56, 112, 147,
-                 162, 113, NA,
-                 NA, -36, NA, -25))
+               c(55.8, 111.5, 146.7,
+                 161.8, 112.6, NA,
+                 NA, -35.5, NA, -25))
   expect_equal(christmas_mojo$theaters[c(1:5, 55:59)],
                c(4232, 3765, 3447,
                  3006, 2111, 8, 2,
                  1, 3, 1))
   expect_equal(christmas_mojo$per_theater[c(1:5, 55:59)],
-               c(6489, 5083, 1885,
-                 1864, 1329, 60, 89,
+               c(6488, 5083, 1884,
+                 1864, 1328, 60, 88,
                  160, 47, 117))
   expect_equal(christmas_mojo$total_gross[c(1:5, 55:59)],
                c(395627411, 71913848,
@@ -66,7 +66,7 @@ test_that("numeric columns are accurate", {
 
 test_that("categorical columns are accurate", {
   expect_equal(christmas_mojo$movie[c(1:5, 55:59)],
-               c("Star Wars: The Last Jedi",
+               c("Star Wars: Episode VIII - The Last Jedi",
                  "Jumanji: Welcome to the Jungle",
                  "Pitch Perfect 3",
                  "The Greatest Showman",
@@ -77,10 +77,16 @@ test_that("categorical columns are accurate", {
                  "Permanent",
                  "Birdboy: The Forgotten Children"))
   expect_equal(christmas_mojo$distributor[c(1:5, 55:59)],
-               c("BV", "Sony", "Uni.",
-                 "Fox", "BV", "SPC",
-                 "FM", "Orch.", "Magn.",
-                 "GK"))
+               c("Walt Disney Studios Motion Pictures",
+                 "Sony Pictures Releasing",
+                 "Universal Pictures",
+                 "Fox",
+                 "Walt Disney Studios Motion Pictures",
+                 "Sony Pictures Classics",
+                 "Film Movement",
+                 "The Orchard",
+                 "Magnolia Pictures",
+                 "GKIDS"))
 
   expect_equal(christmas_num$movie[c(1:5, nums_ending_rows)],
                c("Star Wars Ep. VIII: The Las…",

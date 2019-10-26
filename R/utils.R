@@ -14,22 +14,34 @@ fix_columns <- function(data) {
 }
 
 numeric_cleaner <- function(x) {
-  # Removes everything but numbers and the negative sign,
+  # Removes everything but numbers and the negative sign and the period,
   # then makes numeric.
-  suppressWarnings(as.numeric(gsub("[^[:digit:]|\\-]", "", x)))
+  suppressWarnings(as.numeric(gsub("[^[:digit:]\\.\\-]", "", x)))
 }
 
 mojo_site <- function(page){
-  page <- rvest::html_nodes(page, "center td tr+ tr td~ td+ td")
+  page <- rvest::html_nodes(page, "td")
   page <- rvest::html_text(page)
-  dim(page) <- c(9, length(page) / 9)
+  # Sometimes adds "-" followed by "false". Not sure why.
+  falses <- grep("^false$", page)
+  falses <- sort(c(falses, falses - 1))
+  page <- page[-falses]
+  dim(page) <- c(11, length(page) / 11)
   page <- t(page)
   page <- data.frame(page, stringsAsFactors = FALSE)
+  page$X1 <- NULL
+  page$X2 <- NULL
 
-  names(page) <- c("movie", "distributor", "gross",
-                   "percent_change", "remove", "theaters",
-                   "per_theater", "total_gross", "days")
-  page$remove <- NULL
+  names(page) <- c("movie",
+                   "distributor",
+                   "gross",
+                   "percent_change",
+                   "percent_change_week",
+                   "theaters",
+                   "per_theater",
+                   "total_gross",
+                   "days")
+  page$percent_change_week <- NULL
   return(page)
 }
 
