@@ -97,23 +97,23 @@ test_that("Domestic - top grossing columns have right values", {
                                                     700059566,
                                                     678815482,
                                                     659363944))
-  expect_equal(head(example$international_box_office), c(1116648995,
-                                                         1937100000,
+  expect_equal(head(example$international_box_office), c(1131561399,
+                                                         1939427564,
                                                          2029197650,
-                                                         648198658,
-                                                         1369318718,
+                                                         646853595,
+                                                         1369544272,
                                                          1548844451))
-  expect_equal(head(example$total_box_office), c(2053311220,
-                                                 2795473000,
+  expect_equal(head(example$total_box_office), c(2068223624,
+                                                 2797800564,
                                                  2789705275,
-                                                 1348258224,
-                                                 2048134200,
+                                                 1346913161,
+                                                 2048359754,
                                                  2208208395))
 
 })
 
 test_that("International - top grossing columns have right values", {
-
+  skip_on_cran()
   expect_equal(head(example_international$rank), 1:6)
   expect_equal(head(example_international$year_released), c(2009,
                                                             2019,
@@ -130,11 +130,11 @@ test_that("International - top grossing columns have right values", {
                  "Star Wars Ep. VII: The Force Awakens"))
   expect_equal(head(example_international$international_box_office),
                c(2029197650,
-                 1937100000,
+                 1939427564,
                  1548844451,
-                 1369318718,
+                 1369544272,
                  1165715774,
-                 1116648995))
+                 1131561399))
   expect_equal(head(example_international$american_box_office),
                c(760507625,
                  858373000 	,
@@ -144,49 +144,49 @@ test_that("International - top grossing columns have right values", {
                  936662225))
   expect_equal(head(example_international$total_box_office),
                c(2789705275,
-                 2795473000,
+                 2797800564,
                  2208208395,
-                 2048134200,
+                 2048359754,
                  1518722794,
-                 2053311220))
+                 2068223624))
 
 })
 
 test_that("Worldwide - top grossing columns have right values", {
-
+  skip_on_cran()
   expect_equal(head(example_worldwide$rank), 1:6)
   expect_equal(head(example_worldwide$year_released), c(2019,
                                                         2009,
                                                         1997,
                                                         2015,
                                                         2018,
-                                                        2015))
+                                                        2019))
   expect_equal(head(example_worldwide$movie),
                c("Avengers: Endgame",
                  "Avatar",
                  "Titanic",
                  "Star Wars Ep. VII: The Force Awakens",
                  "Avengers: Infinity War",
-                 "Jurassic World"))
+                 "The Lion King"))
   expect_equal(head(example_worldwide$total_box_office),
-               c(2795473000,
+               c(2797800564,
                  2789705275,
                  2208208395,
-                 2053311220,
-                 2048134200,
-                 1648854864))
+                 2068223624,
+                 2048359754,
+                 1655427631))
   expect_equal(head(example_worldwide$american_box_office),
                c(858373000,
                  760507625,
                  659363944,
                  936662225,
                  678815482,
-                 652270625))
+                 543617567))
   expect_equal(head(example_worldwide$international_box_office),
-               c(1937100000,
+               c(1939427564,
                  2029197650,
                  1548844451,
-                 1116648995,
-                 1369318718,
-                 996584239))
+                 1131561399,
+                 1369544272,
+                 1111810064))
 })

@@ -4,13 +4,10 @@
 \alias{boxoffice}
 \title{Download Information on Box Office Results for Movies}
 \usage{
-boxoffice(dates, site = c("mojo", "numbers"), top_n = NULL)
+boxoffice(dates, top_n = NULL)
 }
 \arguments{
 \item{dates}{A vector of dates to scrape}
-
-\item{site}{Whether you want to get data from boxofficemojo.com or the-numbers.com.
-Accepts inputs of "numbers" (default) or "mojo".}
 
 \item{top_n}{The number of results to return for each day. If NULL (default) returns
 all results, otherwise just top n  results (e.g. top_n = 5, returns 5 top
@@ -24,11 +21,7 @@ Data frame returning info on the name of the movie, its daily gross,
 Download Information on Box Office Results for Movies
 }
 \examples{
-# Uses the-numbers.com website.
 boxoffice(dates = as.Date("2017-12-25"))
-
-# Uses boxofficemojo.com website.
-boxoffice(dates = as.Date("2017-12-25"), site = "mojo")
 
 # Returns only top 10 (daily) grossing movies
 boxoffice(dates = as.Date("2017-12-25"), top_n = 10)

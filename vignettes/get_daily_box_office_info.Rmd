@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The `boxoffice()` function scrapes information about daily box office results of movies. It scrapes the webpages of either [http://www.boxofficemojo.com](http://www.boxofficemojo.com) or [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information. The data it returns are the following:
+The `boxoffice()` function scrapes information about daily box office results of movies. It scrapes the webpages [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information. The data it returns are the following:
 
 1. Movie name    
 2. The studio that produced that movie    
@@ -36,20 +36,6 @@ dim(movies)
 movies[1:5, ]
 ```
 
-There are three parameters for `boxoffice()`: `dates`, `site`, and `top_n`.
+There are two parameters for `boxoffice()`: `dates` and `top_n`.
 
-`dates` are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. `site` indicates which site you want to scrape: the-numbers.com or boxofficemojo.com. The accepted inputs are "numbers" which is the default site or "mojo". Both sites are very similar and provide nearly identical results. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value. 
-
-Note that the terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change or only scrape from the-numbers.com.
-
-Here is the first 10 movie names for both sites. We will use the `top_n` parameter to only return the top 10 selling movies.
-
-```{r}
-mojo <- boxoffice::boxoffice(dates = as.Date("2015-10-31"), 
-                             site = "mojo", top_n = 10)
-numbers <- boxoffice::boxoffice(dates = as.Date("2015-10-31"),
-                             site = "numbers", top_n = 10)
-cbind(mojo[, c(1,3)], numbers[, c(1,3)])
-```
-
-The results are close. Some movie name spellings and numbers are slightly different. In this case, the 10th ranking movie is also different between the sites. Situations like this are rare. When looking at more recent releases (e.g. within the last two weeks), there will be more differences. These differences will disappear (at least for the most part) as time goes on.  
+`dates` are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value. 

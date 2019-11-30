@@ -74,6 +74,7 @@ clean_top_grossing <- function(data, ranks) {
   names(data) <- gsub(" ", "_", names(data))
   names(data) <- gsub("^Rank$",                    "rank", names(data))
   names(data) <- gsub("^Released$",                "year_released", names(data))
+  names(data) <- gsub("^Year$"    ,                "year_released", names(data))
   names(data) <- gsub("^Movie$",                   "movie", names(data))
   names(data) <- gsub("^DomesticBox_Office$",      "american_box_office", names(data))
   names(data) <- gsub("^InternationalBox_Office$", "international_box_office", names(data))

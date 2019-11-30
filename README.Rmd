@@ -10,7 +10,7 @@ output:
 
 ## Overview
 
-The goal of `boxoffice` is to scrape movie data to get information about daily box office results of movies and top grossing movies. It scrapes the webpages of either [https://www.boxofficemojo.com](https://www.boxofficemojo.com) or [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information.
+The goal of `boxoffice` is to scrape movie data to get information about daily box office results of movies and top grossing movies. It scrapes the webpages of  [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information.
 
 ## Installation
 

@@ -132,7 +132,7 @@
     <p>Download Information on Box Office Results for Movies</p>
     </div>
 
-    <pre class="usage"><span class='fu'>boxoffice</span>(<span class='no'>dates</span>, <span class='kw'>site</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"mojo"</span>, <span class='st'>"numbers"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>boxoffice</span>(<span class='no'>dates</span>, <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,11 +140,6 @@
     <tr>
       <th>dates</th>
       <td><p>A vector of dates to scrape</p></td>
-    </tr>
-    <tr>
-      <th>site</th>
-      <td><p>Whether you want to get data from boxofficemojo.com or the-numbers.com.
-Accepts inputs of "numbers" (default) or "mojo".</p></td>
     </tr>
     <tr>
       <th>top_n</th>
@@ -160,52 +155,51 @@ movies per date).</p></td>
  gross-to-date, and gross-per-theater for each date inputted.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Uses the-numbers.com website.</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
-#&gt; 1    Star Wars Ep. VIII: The Las…          Walt Disney 27459557             56
-#&gt; 2  Jumanji: Welcome to the Jungle        Sony Pictures 19138553            111
-#&gt; 3                 Pitch Perfect 3            Universal  6496365            147
-#&gt; 4            The Greatest Showman     20th Century Fox  5604273            162
-#&gt; 5                            Coco          Walt Disney  2805466            113
-#&gt; 6                       Ferdinand     20th Century Fox  2801780             84
-#&gt; 7                      Downsizing   Paramount Pictures  2715843            135
-#&gt; 8      All the Money in the World        Sony Pictures  2565393             NA
-#&gt; 9                  Father Figures         Warner Bros.  2192067            200
-#&gt; 10                   Darkest Hour       Focus Features  1622510             73
-#&gt; 11             The Shape of Water      Fox Searchlight  1419891             95
-#&gt; 12                   Molly’s Game    STX Entertainment  1172036             NA
-#&gt; 13                         Wonder            Lionsgate   710214             77
-#&gt; 14                 Daddy’s Home 2   Paramount Pictures   544612            149
-#&gt; 15                 Justice League         Warner Bros.   435091             76
-#&gt; 16                      Lady Bird                  A24   415989             60
-#&gt; 17                 Thor: Ragnarok          Walt Disney   329457             64
-#&gt; 18            The Disaster Artist                  A24   325057             77
-#&gt; 19                       The Star        Sony Pictures   238704            -13
-#&gt; 20                       The Post     20th Century Fox   236046             35
-#&gt; 21                       I, Tonya                 Neon   210755            109
-#&gt; 22   Three Billboards Outside Eb…      Fox Searchlight   207975             42
-#&gt; 23   Murder on the Orient Express     20th Century Fox   203411             58
-#&gt; 24                 Phantom Thread       Focus Features   127272             NA
-#&gt; 25           A Bad Moms Christmas    STX Entertainment    60302            122
-#&gt; 26                   Wonder Wheel       Amazon Studios    42778             67
-#&gt; 27 The Man Who Invented Christmas      Bleecker Street    33190             48
-#&gt; 28                           Jane     Abramorama Films    27215             NA
-#&gt; 29                       Geostorm         Warner Bros.    16062            169
-#&gt; 30                 Only the Brave        Sony Pictures     9790            145
-#&gt; 31                       Hostiles Entertainment Studi…     9606             65
-#&gt; 32            The Florida Project                  A24     9430             46
-#&gt; 33              Blade Runner 2049         Warner Bros.     8433             52
-#&gt; 34          Roman J. Israel, Esq.        Sony Pictures     4786             63
-#&gt; 35   Same Kind of Different as Me Pure Flix Entertain…     3069            135
-#&gt; 36             Victoria and Abdul       Focus Features     2840            114
-#&gt; 37                      Big Sonia       Argot Pictures     2311             53
-#&gt; 38                       Marshall            Open Road     1937             83
-#&gt; 39                The Breadwinner                GKIDS      792             27
-#&gt; 40             Let There Be Light   Atlas Distribution      736              1
-#&gt; 41   The Killing of a Sacred Deer                  A24      602              3
-#&gt; 42                         Thelma          The Orchard      593             56
-#&gt; 43         BPM (Beats per Minute)          The Orchard      160            -35
-#&gt; 44   Birdboy: The Forgotten Chil…                GKIDS      117            -25
+    <pre class="examples"><div class='input'><span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>))</div><div class='output co'>#&gt;                           movie     distributor    gross percent_change
+#&gt; 1     Star Wars Ep. VIII: The L     Walt Disney 27459557             56
+#&gt; 2     Jumanji: Welcome to the J   Sony Pictures 19138553            111
+#&gt; 3               Pitch Perfect 3       Universal  6496365            147
+#&gt; 4          The Greatest Showman    20th Century  5604273            162
+#&gt; 5                          Coco     Walt Disney  2805466            113
+#&gt; 6                     Ferdinand    20th Century  2801780             84
+#&gt; 7                    Downsizing    Paramount Pi  2715843            135
+#&gt; 8    All the Money in the World   Sony Pictures  2565393             NA
+#&gt; 9                Father Figures    Warner Bros.  2192067            200
+#&gt; 10                 Darkest Hour  Focus Features  1622510             73
+#&gt; 11           The Shape of Water Fox Searchlight  1419891             95
+#&gt; 12                  Mollys Game    STX Entertai  1172036             NA
+#&gt; 13                       Wonder       Lionsgate   710214             77
+#&gt; 14                Daddys Home 2    Paramount Pi   544612            149
+#&gt; 15               Justice League    Warner Bros.   435091             76
+#&gt; 16                    Lady Bird             A24   415989             60
+#&gt; 17               Thor: Ragnarok     Walt Disney   329457             64
+#&gt; 18          The Disaster Artist             A24   325057             77
+#&gt; 19                     The Star   Sony Pictures   238704            -13
+#&gt; 20                     The Post    20th Century   236046             35
+#&gt; 21                     I, Tonya            Neon   210755            109
+#&gt; 22    Three Billboards Outside  Fox Searchlight   207975             42
+#&gt; 23 Murder on the Orient Express    20th Century   203411             58
+#&gt; 24               Phantom Thread  Focus Features   127272             NA
+#&gt; 25         A Bad Moms Christmas    STX Entertai    60302            122
+#&gt; 26                 Wonder Wheel  Amazon Studios    42778             67
+#&gt; 27    The Man Who Invented Chri Bleecker Street    33190             48
+#&gt; 28                         Jane    Abramorama F    27215             NA
+#&gt; 29                     Geostorm    Warner Bros.    16062            169
+#&gt; 30               Only the Brave   Sony Pictures     9790            145
+#&gt; 31                     Hostiles    Entertainmen     9606             65
+#&gt; 32          The Florida Project             A24     9430             46
+#&gt; 33            Blade Runner 2049    Warner Bros.     8433             52
+#&gt; 34        Roman J. Israel, Esq.   Sony Pictures     4786             63
+#&gt; 35 Same Kind of Different as Me    Pure Flix En     3069            135
+#&gt; 36           Victoria and Abdul  Focus Features     2840            114
+#&gt; 37                    Big Sonia  Argot Pictures     2311             53
+#&gt; 38                     Marshall       Open Road     1937             83
+#&gt; 39              The Breadwinner           GKIDS      792             27
+#&gt; 40           Let There Be Light    Atlas Distri      736              1
+#&gt; 41 The Killing of a Sacred Deer             A24      602              3
+#&gt; 42                       Thelma     The Orchard      593             56
+#&gt; 43       BPM (Beats per Minute)     The Orchard      160            -35
+#&gt; 44    Birdboy: The Forgotten Ch           GKIDS      117            -25
 #&gt;    theaters per_theater total_gross days       date
 #&gt; 1      4232        6489   395627411   11 2017-12-25
 #&gt; 2      3765        5083    71913848    6 2017-12-25
@@ -251,295 +245,114 @@ movies per date).</p></td>
 #&gt; 42        9          66      127398   46 2017-12-25
 #&gt; 43        1         160       92117   67 2017-12-25
 #&gt; 44        1         117       12620   11 2017-12-25</div><div class='input'>
-<span class='co'># Uses boxofficemojo.com website.</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>site</span> <span class='kw'>=</span> <span class='st'>"mojo"</span>)</div><div class='output co'>#&gt; <span class='message'>The terms of use for boxofficemojo.com does not permit scraping without their written permission. If you do not have written permission, please ask them for it or change the site parameter to 'numbers' to use the-numbers.com which does not forbid scraping without permission.</span></div><div class='output co'>#&gt;                                        movie
-#&gt; 1    Star Wars: Episode VIII - The Last Jedi
-#&gt; 2             Jumanji: Welcome to the Jungle
-#&gt; 3                            Pitch Perfect 3
-#&gt; 4                       The Greatest Showman
-#&gt; 5                                       Coco
-#&gt; 6                                  Ferdinand
-#&gt; 7                                 Downsizing
-#&gt; 8                 All the Money in the World
-#&gt; 9                             Father Figures
-#&gt; 10                              Darkest Hour
-#&gt; 11                        The Shape of Water
-#&gt; 12                              Molly's Game
-#&gt; 13                           Tiger Zinda Hai
-#&gt; 14                                    Wonder
-#&gt; 15                            Daddy's Home 2
-#&gt; 16                            Justice League
-#&gt; 17                                 Lady Bird
-#&gt; 18                            Thor: Ragnarok
-#&gt; 19                       The Disaster Artist
-#&gt; 20                                  The Star
-#&gt; 21                                  The Post
-#&gt; 22                      Call Me by Your Name
-#&gt; 23                                  I, Tonya
-#&gt; 24 Three Billboards Outside Ebbing, Missouri
-#&gt; 25              Murder on the Orient Express
-#&gt; 26                            Phantom Thread
-#&gt; 27                                     Youth
-#&gt; 28       Along with the Gods: The Two Worlds
-#&gt; 29                      A Bad Moms Christmas
-#&gt; 30                              Wonder Wheel
-#&gt; 31            The Man Who Invented Christmas
-#&gt; 32                                  Geostorm
-#&gt; 33                            Loving Vincent
-#&gt; 34                            Only the Brave
-#&gt; 35                                  Hostiles
-#&gt; 36                       The Florida Project
-#&gt; 37                         Blade Runner 2049
-#&gt; 38                                The Square
-#&gt; 39                                 Happy End
-#&gt; 40              The Thousand Faces of Dunjia
-#&gt; 41                     Roman J. Israel, Esq.
-#&gt; 42              Same Kind of Different as Me
-#&gt; 43                          Victoria &amp; Abdul
-#&gt; 44        The Polar Express2017 IMAX Release
-#&gt; 45                    The Other Side of Hope
-#&gt; 46                                 Big Sonia
-#&gt; 47                             The Swindlers
-#&gt; 48                             The Lucky Man
-#&gt; 49                                  Marshall
-#&gt; 50                           The Breadwinner
-#&gt; 51                          My Friend Dahmer
-#&gt; 52                        Let There Be Light
-#&gt; 53              The Killing of a Sacred Deer
-#&gt; 54                                    Thelma
-#&gt; 55                                 Novitiate
-#&gt; 56                           The Paris Opera
-#&gt; 57                    BPM (Beats Per Minute)
-#&gt; 58                                 Permanent
-#&gt; 59           Birdboy: The Forgotten Children
-#&gt;                              distributor    gross percent_change theaters
-#&gt; 1    Walt Disney Studios Motion Pictures 27459557           55.8     4232
-#&gt; 2                Sony Pictures Releasing 19138553          111.5     3765
-#&gt; 3                     Universal Pictures  6496365          146.7     3447
-#&gt; 4                                    Fox  5604273          161.8     3006
-#&gt; 5    Walt Disney Studios Motion Pictures  2805466          112.6     2111
-#&gt; 6                                    Fox  2801780           83.7     3630
-#&gt; 7                     Paramount Pictures  2715843          135.0     2668
-#&gt; 8                          Concorde Film  2565393             NA     2074
-#&gt; 9                           Warner Bros.  2192067          199.7     2902
-#&gt; 10                        Focus Features  1622510           73.0      806
-#&gt; 11              Fox Searchlight Pictures  1419891           95.4      730
-#&gt; 12                     STX Entertainment  1172036             NA      271
-#&gt; 13                                     -   785745           33.3      299
-#&gt; 14                             Lionsgate   710214           76.6      794
-#&gt; 15                    Paramount Pictures   544612          149.5     1073
-#&gt; 16                          Warner Bros.   435091           75.9     1101
-#&gt; 17                                   A24   415989           60.4      372
-#&gt; 18   Walt Disney Studios Motion Pictures   329457           64.3      701
-#&gt; 19                                   A24   325057           77.2      488
-#&gt; 20               Sony Pictures Releasing   238704          -12.7     1106
-#&gt; 21                                   Fox   236046           35.2        9
-#&gt; 22                Sony Pictures Classics   229888             NA      114
-#&gt; 23                                  Neon   220806          108.3       43
-#&gt; 24              Fox Searchlight Pictures   207975           42.5      264
-#&gt; 25                                   Fox   203411           58.3      361
-#&gt; 26                        Focus Features   127272             NA        4
-#&gt; 27          China Lion Film Distribution   116922             NA       34
-#&gt; 28             Well Go USA Entertainment    99644             NA       17
-#&gt; 29                     STX Entertainment    60302          121.9      275
-#&gt; 30                        Amazon Studios    42778           67.1      113
-#&gt; 31                 Bleecker Street Media    33190           47.7      146
-#&gt; 32                          Warner Bros.    16062          169.5      110
-#&gt; 33               Good Deed Entertainment    12235             NA       55
-#&gt; 34               Sony Pictures Releasing     9790          145.2       86
-#&gt; 35 Entertainment Studios Motion Pictures     9606           64.5        3
-#&gt; 36                                   A24     9430           45.9       43
-#&gt; 37                          Warner Bros.     8433           51.8       75
-#&gt; 38                     Magnolia Pictures     7250             NA       17
-#&gt; 39                Sony Pictures Classics     7131             NA        3
-#&gt; 40             Well Go USA Entertainment     7092             NA        4
-#&gt; 41               Sony Pictures Releasing     4786           62.7       49
-#&gt; 42               Pure Flix Entertainment     3069          135.2       45
-#&gt; 43                        Focus Features     2840          114.3       24
-#&gt; 44                          Warner Bros.     2603          -80.7       NA
-#&gt; 45                           Janus Films     2386             NA        4
-#&gt; 46                        Argot Pictures     2311           52.5        3
-#&gt; 47             Well Go USA Entertainment     2162             NA        1
-#&gt; 48                      Indican Pictures     1948             NA        3
-#&gt; 49                  Open Road Films (II)     1937           82.9       58
-#&gt; 50                                 GKIDS      792           26.5       10
-#&gt; 51                              FilmRise      784             NA        3
-#&gt; 52            Atlas Distribution Company      736            1.1        8
-#&gt; 53                                   A24      602            3.4        8
-#&gt; 54                           The Orchard      593           56.1        9
-#&gt; 55                Sony Pictures Classics      483             NA        8
-#&gt; 56                         Film Movement      177             NA        2
-#&gt; 57                           The Orchard      160          -35.5        1
-#&gt; 58                     Magnolia Pictures      141             NA        3
-#&gt; 59                                 GKIDS      117          -25.0        1
-#&gt;    per_theater total_gross days       date
-#&gt; 1         6488   395627411   11 2017-12-25
-#&gt; 2         5083    71913848    6 2017-12-25
-#&gt; 3         1884    26424890    4 2017-12-25
-#&gt; 4         1864    19008847    6 2017-12-25
-#&gt; 5         1328   164307743   34 2017-12-25
-#&gt; 6          771    29601410   11 2017-12-25
-#&gt; 7         1017     7670130    4 2017-12-25
-#&gt; 8         1236     2565393    1 2017-12-25
-#&gt; 9          755     5479518    4 2017-12-25
-#&gt; 10        2013     8367532   34 2017-12-25
-#&gt; 11        1945     8986046   25 2017-12-25
-#&gt; 12        4324     1172036    1 2017-12-25
-#&gt; 13        2627     2572853    4 2017-12-25
-#&gt; 14         894   115654826   39 2017-12-25
-#&gt; 15         507    99751582   46 2017-12-25
-#&gt; 16         395   223128877   39 2017-12-25
-#&gt; 17        1118    28715314   53 2017-12-25
-#&gt; 18         469   309454093   53 2017-12-25
-#&gt; 19         666    16020034   25 2017-12-25
-#&gt; 20         215    38594870   39 2017-12-25
-#&gt; 21       26227      762057    4 2017-12-25
-#&gt; 22        2016     3262454   32 2017-12-25
-#&gt; 23        5135     1306911   18 2017-12-25
-#&gt; 24         787    22949085   46 2017-12-25
-#&gt; 25         563    99444878   46 2017-12-25
-#&gt; 26       31818      127272    1 2017-12-25
-#&gt; 27        3438     1157273   11 2017-12-25
-#&gt; 28        5861      285190    4 2017-12-25
-#&gt; 29         219    71571546   55 2017-12-25
-#&gt; 30         378     1205919   25 2017-12-25
-#&gt; 31         227     5419083   34 2017-12-25
-#&gt; 32         146    33473188   67 2017-12-25
-#&gt; 33         222     6110430   95 2017-12-25
-#&gt; 34         113    18106612   67 2017-12-25
-#&gt; 35        3202       32455    4 2017-12-25
-#&gt; 36         219     5204890   81 2017-12-25
-#&gt; 37         112    91564672   81 2017-12-25
-#&gt; 38         426     1176775   60 2017-12-25
-#&gt; 39        2377       30222    4 2017-12-25
-#&gt; 40        1773      109690   11 2017-12-25
-#&gt; 41          97    11825352   39 2017-12-25
-#&gt; 42          68     6370123   67 2017-12-25
-#&gt; 43         118    22205730   95 2017-12-25
-#&gt; 44          NA      843610   39 2017-12-25
-#&gt; 45         596      118777   25 2017-12-25
-#&gt; 46         770       94741   39 2017-12-25
-#&gt; 47        2162      240979   25 2017-12-25
-#&gt; 48         649        6904    5 2017-12-25
-#&gt; 49          33     9450507   74 2017-12-25
-#&gt; 50          79      210278   39 2017-12-25
-#&gt; 51         261     1293780   53 2017-12-25
-#&gt; 52          92     7203504   60 2017-12-25
-#&gt; 53          75     2289085   67 2017-12-25
-#&gt; 54          65      128627   46 2017-12-25
-#&gt; 55          60      563231   60 2017-12-25
-#&gt; 56          88       51772   69 2017-12-25
-#&gt; 57         160       92117   67 2017-12-25
-#&gt; 58          47        9238   11 2017-12-25
-#&gt; 59         117       12620   11 2017-12-25</div><div class='input'>
 <span class='co'># Returns only top 10 (daily) grossing movies</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt;                             movie        distributor    gross percent_change
-#&gt; 1    Star Wars Ep. VIII: The Las…        Walt Disney 27459557             56
-#&gt; 2  Jumanji: Welcome to the Jungle      Sony Pictures 19138553            111
-#&gt; 3                 Pitch Perfect 3          Universal  6496365            147
-#&gt; 4            The Greatest Showman   20th Century Fox  5604273            162
-#&gt; 5                            Coco        Walt Disney  2805466            113
-#&gt; 6                       Ferdinand   20th Century Fox  2801780             84
-#&gt; 7                      Downsizing Paramount Pictures  2715843            135
-#&gt; 8      All the Money in the World      Sony Pictures  2565393             NA
-#&gt; 9                  Father Figures       Warner Bros.  2192067            200
-#&gt; 10                   Darkest Hour     Focus Features  1622510             73
-#&gt;    theaters per_theater total_gross days       date
-#&gt; 1      4232        6489   395627411   11 2017-12-25
-#&gt; 2      3765        5083    71913848    6 2017-12-25
-#&gt; 3      3447        1885    26424890    4 2017-12-25
-#&gt; 4      3006        1864    19008847    6 2017-12-25
-#&gt; 5      2111        1329   164307743   34 2017-12-25
-#&gt; 6      3630         772    29601410   11 2017-12-25
-#&gt; 7      2668        1018     7670130    4 2017-12-25
-#&gt; 8      2074        1237     2565393    1 2017-12-25
-#&gt; 9      2902         755     5479518    4 2017-12-25
-#&gt; 10      806        2013     8367532   34 2017-12-25</div><div class='input'><span class='co'># Uses the dates of Christmas and New Years Eve 2017</span>
-<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-12-25"</span>, <span class='st'>"2017-12-31"</span>)))</div><div class='output co'>#&gt;                             movie          distributor    gross percent_change
-#&gt; 1    Star Wars Ep. VIII: The Las…          Walt Disney 27459557             56
-#&gt; 2  Jumanji: Welcome to the Jungle        Sony Pictures 19138553            111
-#&gt; 3                 Pitch Perfect 3            Universal  6496365            147
-#&gt; 4            The Greatest Showman     20th Century Fox  5604273            162
-#&gt; 5                            Coco          Walt Disney  2805466            113
-#&gt; 6                       Ferdinand     20th Century Fox  2801780             84
-#&gt; 7                      Downsizing   Paramount Pictures  2715843            135
-#&gt; 8      All the Money in the World        Sony Pictures  2565393             NA
-#&gt; 9                  Father Figures         Warner Bros.  2192067            200
-#&gt; 10                   Darkest Hour       Focus Features  1622510             73
-#&gt; 11             The Shape of Water      Fox Searchlight  1419891             95
-#&gt; 12                   Molly’s Game    STX Entertainment  1172036             NA
-#&gt; 13                         Wonder            Lionsgate   710214             77
-#&gt; 14                 Daddy’s Home 2   Paramount Pictures   544612            149
-#&gt; 15                 Justice League         Warner Bros.   435091             76
-#&gt; 16                      Lady Bird                  A24   415989             60
-#&gt; 17                 Thor: Ragnarok          Walt Disney   329457             64
-#&gt; 18            The Disaster Artist                  A24   325057             77
-#&gt; 19                       The Star        Sony Pictures   238704            -13
-#&gt; 20                       The Post     20th Century Fox   236046             35
-#&gt; 21                       I, Tonya                 Neon   210755            109
-#&gt; 22   Three Billboards Outside Eb…      Fox Searchlight   207975             42
-#&gt; 23   Murder on the Orient Express     20th Century Fox   203411             58
-#&gt; 24                 Phantom Thread       Focus Features   127272             NA
-#&gt; 25           A Bad Moms Christmas    STX Entertainment    60302            122
-#&gt; 26                   Wonder Wheel       Amazon Studios    42778             67
-#&gt; 27 The Man Who Invented Christmas      Bleecker Street    33190             48
-#&gt; 28                           Jane     Abramorama Films    27215             NA
-#&gt; 29                       Geostorm         Warner Bros.    16062            169
-#&gt; 30                 Only the Brave        Sony Pictures     9790            145
-#&gt; 31                       Hostiles Entertainment Studi…     9606             65
-#&gt; 32            The Florida Project                  A24     9430             46
-#&gt; 33              Blade Runner 2049         Warner Bros.     8433             52
-#&gt; 34          Roman J. Israel, Esq.        Sony Pictures     4786             63
-#&gt; 35   Same Kind of Different as Me Pure Flix Entertain…     3069            135
-#&gt; 36             Victoria and Abdul       Focus Features     2840            114
-#&gt; 37                      Big Sonia       Argot Pictures     2311             53
-#&gt; 38                       Marshall            Open Road     1937             83
-#&gt; 39                The Breadwinner                GKIDS      792             27
-#&gt; 40             Let There Be Light   Atlas Distribution      736              1
-#&gt; 41   The Killing of a Sacred Deer                  A24      602              3
-#&gt; 42                         Thelma          The Orchard      593             56
-#&gt; 43         BPM (Beats per Minute)          The Orchard      160            -35
-#&gt; 44   Birdboy: The Forgotten Chil…                GKIDS      117            -25
-#&gt; 45   Star Wars Ep. VIII: The Las…          Walt Disney 13566649            -32
-#&gt; 46 Jumanji: Welcome to the Jungle        Sony Pictures 12989945            -33
-#&gt; 47           The Greatest Showman     20th Century Fox  4436321            -23
-#&gt; 48                Pitch Perfect 3            Universal  3565285            -46
-#&gt; 49                      Ferdinand     20th Century Fox  2757842            -33
-#&gt; 50                           Coco          Walt Disney  1852339            -33
-#&gt; 51                   Darkest Hour       Focus Features  1771920            -10
-#&gt; 52     All the Money in the World        Sony Pictures  1749655            -16
-#&gt; 53                     Downsizing   Paramount Pictures  1273053            -31
-#&gt; 54                 Father Figures         Warner Bros.  1095601            -27
-#&gt; 55             The Shape of Water      Fox Searchlight   996207            -27
-#&gt; 56                         Wonder            Lionsgate   847181            -28
-#&gt; 57                   Molly’s Game    STX Entertainment   729998            -17
-#&gt; 58                      Lady Bird                  A24   387940            -32
-#&gt; 59                 Justice League         Warner Bros.   276222            -44
-#&gt; 60                 Daddy’s Home 2   Paramount Pictures   244693            -33
-#&gt; 61                 Thor: Ragnarok          Walt Disney   206623            -40
-#&gt; 62   Three Billboards Outside Eb…      Fox Searchlight   201312            -24
-#&gt; 63            The Disaster Artist                  A24   200119            -49
-#&gt; 64                       The Post     20th Century Fox   186640             -8
-#&gt; 65   Murder on the Orient Express     20th Century Fox   176205            -24
-#&gt; 66                       I, Tonya                 Neon   155000            -38
-#&gt; 67                       The Star        Sony Pictures    98913            -46
-#&gt; 68                 Phantom Thread       Focus Features    63340            -23
-#&gt; 69           A Bad Moms Christmas    STX Entertainment    32523            -51
-#&gt; 70 The Man Who Invented Christmas      Bleecker Street    17652            -31
-#&gt; 71            The Florida Project                  A24    11940            -46
-#&gt; 72                       Geostorm         Warner Bros.    11702            -51
-#&gt; 73                   Wonder Wheel       Amazon Studios    11088            -21
-#&gt; 74              Blade Runner 2049         Warner Bros.    10427            -48
-#&gt; 75                 Only the Brave        Sony Pictures     9765            -46
-#&gt; 76                       Hostiles Entertainment Studi…     9739            -26
-#&gt; 77             Victoria and Abdul       Focus Features     3485            -28
-#&gt; 78   Same Kind of Different as Me Pure Flix Entertain…     2919            -38
-#&gt; 79                       Marshall            Open Road     2687            -42
-#&gt; 80          Roman J. Israel, Esq.        Sony Pictures     2322            -54
-#&gt; 81                      Big Sonia       Argot Pictures     2298            -45
-#&gt; 82                The Breadwinner                GKIDS      528            -76
-#&gt; 83             Let There Be Light   Atlas Distribution      504            -53
-#&gt; 84                         Thelma          The Orchard      245            -63
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-12-25"</span>), <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt;                         movie    distributor    gross percent_change theaters
+#&gt; 1   Star Wars Ep. VIII: The L    Walt Disney 27459557             56     4232
+#&gt; 2   Jumanji: Welcome to the J  Sony Pictures 19138553            111     3765
+#&gt; 3             Pitch Perfect 3      Universal  6496365            147     3447
+#&gt; 4        The Greatest Showman   20th Century  5604273            162     3006
+#&gt; 5                        Coco    Walt Disney  2805466            113     2111
+#&gt; 6                   Ferdinand   20th Century  2801780             84     3630
+#&gt; 7                  Downsizing   Paramount Pi  2715843            135     2668
+#&gt; 8  All the Money in the World  Sony Pictures  2565393             NA     2074
+#&gt; 9              Father Figures   Warner Bros.  2192067            200     2902
+#&gt; 10               Darkest Hour Focus Features  1622510             73      806
+#&gt;    per_theater total_gross days       date
+#&gt; 1         6489   395627411   11 2017-12-25
+#&gt; 2         5083    71913848    6 2017-12-25
+#&gt; 3         1885    26424890    4 2017-12-25
+#&gt; 4         1864    19008847    6 2017-12-25
+#&gt; 5         1329   164307743   34 2017-12-25
+#&gt; 6          772    29601410   11 2017-12-25
+#&gt; 7         1018     7670130    4 2017-12-25
+#&gt; 8         1237     2565393    1 2017-12-25
+#&gt; 9          755     5479518    4 2017-12-25
+#&gt; 10        2013     8367532   34 2017-12-25</div><div class='input'><span class='co'># Uses the dates of Christmas and New Years Eve 2017</span>
+<span class='fu'>boxoffice</span>(<span class='kw'>dates</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-12-25"</span>, <span class='st'>"2017-12-31"</span>)))</div><div class='output co'>#&gt;                           movie     distributor    gross percent_change
+#&gt; 1     Star Wars Ep. VIII: The L     Walt Disney 27459557             56
+#&gt; 2     Jumanji: Welcome to the J   Sony Pictures 19138553            111
+#&gt; 3               Pitch Perfect 3       Universal  6496365            147
+#&gt; 4          The Greatest Showman    20th Century  5604273            162
+#&gt; 5                          Coco     Walt Disney  2805466            113
+#&gt; 6                     Ferdinand    20th Century  2801780             84
+#&gt; 7                    Downsizing    Paramount Pi  2715843            135
+#&gt; 8    All the Money in the World   Sony Pictures  2565393             NA
+#&gt; 9                Father Figures    Warner Bros.  2192067            200
+#&gt; 10                 Darkest Hour  Focus Features  1622510             73
+#&gt; 11           The Shape of Water Fox Searchlight  1419891             95
+#&gt; 12                  Mollys Game    STX Entertai  1172036             NA
+#&gt; 13                       Wonder       Lionsgate   710214             77
+#&gt; 14                Daddys Home 2    Paramount Pi   544612            149
+#&gt; 15               Justice League    Warner Bros.   435091             76
+#&gt; 16                    Lady Bird             A24   415989             60
+#&gt; 17               Thor: Ragnarok     Walt Disney   329457             64
+#&gt; 18          The Disaster Artist             A24   325057             77
+#&gt; 19                     The Star   Sony Pictures   238704            -13
+#&gt; 20                     The Post    20th Century   236046             35
+#&gt; 21                     I, Tonya            Neon   210755            109
+#&gt; 22    Three Billboards Outside  Fox Searchlight   207975             42
+#&gt; 23 Murder on the Orient Express    20th Century   203411             58
+#&gt; 24               Phantom Thread  Focus Features   127272             NA
+#&gt; 25         A Bad Moms Christmas    STX Entertai    60302            122
+#&gt; 26                 Wonder Wheel  Amazon Studios    42778             67
+#&gt; 27    The Man Who Invented Chri Bleecker Street    33190             48
+#&gt; 28                         Jane    Abramorama F    27215             NA
+#&gt; 29                     Geostorm    Warner Bros.    16062            169
+#&gt; 30               Only the Brave   Sony Pictures     9790            145
+#&gt; 31                     Hostiles    Entertainmen     9606             65
+#&gt; 32          The Florida Project             A24     9430             46
+#&gt; 33            Blade Runner 2049    Warner Bros.     8433             52
+#&gt; 34        Roman J. Israel, Esq.   Sony Pictures     4786             63
+#&gt; 35 Same Kind of Different as Me    Pure Flix En     3069            135
+#&gt; 36           Victoria and Abdul  Focus Features     2840            114
+#&gt; 37                    Big Sonia  Argot Pictures     2311             53
+#&gt; 38                     Marshall       Open Road     1937             83
+#&gt; 39              The Breadwinner           GKIDS      792             27
+#&gt; 40           Let There Be Light    Atlas Distri      736              1
+#&gt; 41 The Killing of a Sacred Deer             A24      602              3
+#&gt; 42                       Thelma     The Orchard      593             56
+#&gt; 43       BPM (Beats per Minute)     The Orchard      160            -35
+#&gt; 44    Birdboy: The Forgotten Ch           GKIDS      117            -25
+#&gt; 45    Star Wars Ep. VIII: The L     Walt Disney 13566649            -32
+#&gt; 46    Jumanji: Welcome to the J   Sony Pictures 12989945            -33
+#&gt; 47         The Greatest Showman    20th Century  4436321            -23
+#&gt; 48              Pitch Perfect 3       Universal  3565285            -46
+#&gt; 49                    Ferdinand    20th Century  2757842            -33
+#&gt; 50                         Coco     Walt Disney  1852339            -33
+#&gt; 51                 Darkest Hour  Focus Features  1771920            -10
+#&gt; 52   All the Money in the World   Sony Pictures  1749655            -16
+#&gt; 53                   Downsizing    Paramount Pi  1273053            -31
+#&gt; 54               Father Figures    Warner Bros.  1095601            -27
+#&gt; 55           The Shape of Water Fox Searchlight   996207            -27
+#&gt; 56                       Wonder       Lionsgate   847181            -28
+#&gt; 57                  Mollys Game    STX Entertai   729998            -17
+#&gt; 58                    Lady Bird             A24   387940            -32
+#&gt; 59               Justice League    Warner Bros.   276222            -44
+#&gt; 60                Daddys Home 2    Paramount Pi   244693            -33
+#&gt; 61               Thor: Ragnarok     Walt Disney   206623            -40
+#&gt; 62    Three Billboards Outside  Fox Searchlight   201312            -24
+#&gt; 63          The Disaster Artist             A24   200119            -49
+#&gt; 64                     The Post    20th Century   186640             -8
+#&gt; 65 Murder on the Orient Express    20th Century   176205            -24
+#&gt; 66                     I, Tonya            Neon   155000            -38
+#&gt; 67                     The Star   Sony Pictures    98913            -46
+#&gt; 68               Phantom Thread  Focus Features    63340            -23
+#&gt; 69         A Bad Moms Christmas    STX Entertai    32523            -51
+#&gt; 70    The Man Who Invented Chri Bleecker Street    17652            -31
+#&gt; 71          The Florida Project             A24    11940            -46
+#&gt; 72                     Geostorm    Warner Bros.    11702            -51
+#&gt; 73                 Wonder Wheel  Amazon Studios    11088            -21
+#&gt; 74            Blade Runner 2049    Warner Bros.    10427            -48
+#&gt; 75               Only the Brave   Sony Pictures     9765            -46
+#&gt; 76                     Hostiles    Entertainmen     9739            -26
+#&gt; 77           Victoria and Abdul  Focus Features     3485            -28
+#&gt; 78 Same Kind of Different as Me    Pure Flix En     2919            -38
+#&gt; 79                     Marshall       Open Road     2687            -42
+#&gt; 80        Roman J. Israel, Esq.   Sony Pictures     2322            -54
+#&gt; 81                    Big Sonia  Argot Pictures     2298            -45
+#&gt; 82              The Breadwinner           GKIDS      528            -76
+#&gt; 83           Let There Be Light    Atlas Distri      504            -53
+#&gt; 84                       Thelma     The Orchard      245            -63
 #&gt;    theaters per_theater total_gross days       date
 #&gt; 1      4232        6489   395627411   11 2017-12-25
 #&gt; 2      3765        5083    71913848    6 2017-12-25

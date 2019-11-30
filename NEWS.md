@@ -1,6 +1,9 @@
-# boxoffice
+# boxoffice 2.0.0
 
-* 1.3.0
+* Removes ability to scrape boxofficemojo.com as this site requires their written permission for scraping. 
+  Removes the `site` parameter from `boxoffice()` as the only site is now the-numbers.com.
+
+# boxoffice 1.3.0
 
 * Fix package not working as boxofficemojo.com changed their site organization.
 

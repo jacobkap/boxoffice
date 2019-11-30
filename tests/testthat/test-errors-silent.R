@@ -11,14 +11,6 @@ test_that("returns silent", {
 
 })
 
-test_that("returns warning", {
-  expect_message(boxoffice(dates = as.Date("2017-12-25"), site = "mojo"))
-  expect_message(boxoffice(dates = as.Date("2017-12-25"), site = "mojo",
-                          top_n = 10))
-
-  expect_message(boxoffice(dates = christmas, site = "mojo"))
-  expect_message(boxoffice(dates = christmas, site = "mojo", top_n = 10))
-})
 
 
 test_that("wrong inputs cause error - site", {
