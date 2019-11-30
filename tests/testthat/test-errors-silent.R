@@ -4,14 +4,21 @@ context("errors-silent")
 test_that("returns silent", {
   expect_silent(boxoffice(dates = as.Date("2017-12-25")))
   expect_silent(boxoffice(dates = as.Date("2017-12-25"), top_n = 10))
-
   expect_silent(boxoffice(dates = christmas))
   expect_silent(boxoffice(dates = christmas, top_n = 10))
-
-
 })
 
-
+test_that("impossible date returns message", {
+  expect_message(boxoffice(dates = as.Date("1400-12-25")))
+  expect_message(boxoffice(dates = as.Date("1400-12-25"), top_n = 10))
+  expect_message(boxoffice(dates = as.Date(c("2017-12-25", "1800-12-25"))))
+  expect_message(boxoffice(dates = as.Date(c("2017-12-25", "1800-12-25")),
+                           top_n = 10))
+  expect_message(boxoffice(dates = as.Date(c("1400-12-25", "1800-12-25")),
+                           top_n = 10))
+  expect_message(boxoffice(dates = christmas_impossible_dates,
+                           top_n = 10))
+})
 
 test_that("wrong inputs cause error - site", {
   expect_error(boxoffice(dates = as.Date("2017-12-25"), site = "moj"))
@@ -55,5 +62,7 @@ test_that("wrong inputs cause error - dates", {
                                            "2013-01-01", "2025-12-25"))))
   expect_error(boxoffice(dates = as.Date(c("2012-01-01",
                                            "2013-01-01", "2025-1"))))
+  expect_error(boxoffice(dates = as.Date("2025-12-25")))
+  expect_error(boxoffice(dates = as.Date("2025-12-25"), top_n = 10))
 
 })

@@ -39,7 +39,7 @@ top_grossing <- function(type = "american",
   }
 
   if (min(ranks) < 1) {
-    stop("ranks cannot be a number below 1")
+    stop("ranks cannot be a number below 1.")
   }
 
 
@@ -77,8 +77,10 @@ clean_top_grossing <- function(data, ranks) {
   names(data) <- gsub("^Year$"    ,                "year_released", names(data))
   names(data) <- gsub("^Movie$",                   "movie", names(data))
   names(data) <- gsub("^DomesticBox_Office$",      "american_box_office", names(data))
-  names(data) <- gsub("^InternationalBox_Office$", "international_box_office", names(data))
-  names(data) <- gsub("^WorldwideBox_Office$",     "total_box_office", names(data))
+  names(data) <- gsub("^InternationalBox_Office$",
+                      "international_box_office", names(data))
+  names(data) <- gsub("^WorldwideBox_Office$",
+                      "total_box_office", names(data))
   data$rank                     <- numeric_cleaner(data$rank)
   data$year_released            <- numeric_cleaner(data$year_released)
   data$american_box_office      <- numeric_cleaner(data$american_box_office)
@@ -98,7 +100,18 @@ clean_top_grossing <- function(data, ranks) {
 get_rank_data <- function(url, page_number) {
   useragent <- paste0("Mozilla/5.0 (compatible; a bot using the R boxoffice",
                       " package; https://github.com/jacobkap/boxoffice/)")
-  page <- httr::GET(paste0(url, page_number), httr::user_agent(useragent))
+
+  page <- tryCatch({
+    httr::GET(paste0(url, page_number),
+              httr::user_agent(useragent))
+  }, error = function(e) {
+    message(paste0(url, page_number, " could not be scraped. Please check ",
+                   "the website to make sure the date is available or ",
+                   "check your internet connection."))
+    return(NULL)
+  })
+
+#  page <- httr::GET(paste0(url, page_number), httr::user_agent(useragent))
   page <- httr::content(page, "parsed", encoding = "UTF-8")
   page <- rvest::html_nodes(page, "th , td")
   page <- rvest::html_text(page)

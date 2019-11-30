@@ -35,7 +35,7 @@ numbers_site <- function(page){
   page <- page[[1]]
 
   # Last 2 rows are blank, removes the
-  page <- page[1:(nrow(page)- 2), ]
+  page <- page[1:(nrow(page) - 2), ]
 
   return(page)
 }

@@ -46,31 +46,39 @@ boxoffice <- function(dates,
 
   for (i in seq_along(url_dates)) {
 
-    page <- httr::GET(paste0(url_start, url_dates[i]),
-                      httr::user_agent(useragent))
-    if (httr::http_error(page)) {
-      Sys.sleep(1)
-      page <- httr::GET(paste0(url_start, url_dates[i]),
-                        httr::user_agent(useragent))
-    }
-    if (httr::http_error(page)) {
-      page <- NULL
-    }
+    page <- tryCatch({
+      httr::GET(paste0(url_start, url_dates[i]),
+                httr::user_agent(useragent))
+    }, error = function(e) {
+      message(paste0(url_start, url_dates[i],
+                     " could not be scraped. Please check ",
+                     "the website to make sure the date is available or ",
+                     "check your internet connection."))
+      return(NULL)
+    })
 
-    page <- httr::content(page, "parsed", encoding = "UTF-8")
-    if (is.null(page)) {
-      message(url_dates[i], "could not be scraped. Please check the website to make sure the date is available or check your internet connection.")
-    } else {
+
+    if (!is.null(page)) {
+      page <- httr::content(page, "parsed", encoding = "UTF-8")
       page <- numbers_site(page)
       page <- fix_columns(page)
 
       # Makes numeric and removes $ and , values from columns -------------------
       page[, 3:ncol(page)]  <- sapply(page[3:ncol(page)], numeric_cleaner)
-      page$date <- dates[i]
 
       if (!is.null(top_n)) {
-        top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
-        page <- page[1:top_n, ]
+        temp_top_n <- ifelse(top_n > nrow(page), nrow(page), top_n)
+        page <- page[1:temp_top_n, ]
+      }
+
+      # If no error but no data found
+      if (nrow(page) == 1 & all(sapply(page, is.na))) {
+        page <- NULL
+        message(paste0("No results found for ", url_dates[i],
+                       ". Please check the website to make ",
+                       "sure that this date is available."))
+      } else {
+        page$date <- dates[i]
       }
 
       results[[i]] <- page
@@ -81,9 +89,11 @@ boxoffice <- function(dates,
   results <- do.call(rbind, results)
   results <- as.data.frame(results)
 
-  if (nrow(results) > 0) {
-    return(results)
-  } else {
-    stop("No results found. Please check the website to make sure the dates are available.")
+  if (nrow(results) == 0) {
+    message(paste0("No results found. Please check the website to make ",
+                   "sure the dates are available."))
+    return(NULL)
   }
+  return(results)
+
 }

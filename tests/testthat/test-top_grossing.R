@@ -174,14 +174,14 @@ test_that("Worldwide - top grossing columns have right values", {
                  2208208395,
                  2068223624,
                  2048359754,
-                 1655427631))
+                 1655434631))
   expect_equal(head(example_worldwide$american_box_office),
                c(858373000,
                  760507625,
                  659363944,
                  936662225,
                  678815482,
-                 543617567))
+                 543624567))
   expect_equal(head(example_worldwide$international_box_office),
                c(1939427564,
                  2029197650,
