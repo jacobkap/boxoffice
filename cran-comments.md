@@ -11,7 +11,18 @@
 
 ## R CMD check results
 
-There were no ERRORs or WARNINGs or NOTES.
+There were no ERRORs, no WARNINGs, and one NOTE.
+
+The note says 
+
+'New submission
+
+Package was archived on CRAN
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2019-10-30 for policy violation.'
+  
+This is a submission that addresses those issues.
 
 ## Reverse dependencies
 
