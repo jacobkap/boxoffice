@@ -11,7 +11,7 @@ top_grossing(type = "american", ranks = 1:100)
 'american' (American box office), 'international' (non-American) and
 'worldwide' (domestic + international box office).}
 
-\item{ranks}{A vector of rankings you want it to return. For example.
+\item{ranks}{A vector of integers for the rankings you want it to return. For example.
 an input of 1:5 will return the top 5 grossing movies.}
 }
 \value{

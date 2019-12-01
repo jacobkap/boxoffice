@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The `boxoffice()` function scrapes information about daily box office results of movies. It scrapes the webpages [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information. The data it returns are the following:
+The `boxoffice()` function scrapes information about daily box office results of movies. It scrapes the webpage [https://www.the-numbers.com/](https://www.the-numbers.com/) for this information. The data it returns are the following:
 
 1. Movie name    
 2. The studio that produced that movie    
@@ -39,3 +39,5 @@ movies[1:5, ]
 There are two parameters for `boxoffice()`: `dates` and `top_n`.
 
 `dates` are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value. 
+
+`top_n` gives only the top N highest grossing movies for that day. If you want only the top 10 movies that day (ranked by daily movie revenue), you would set `top_n` to 10. 

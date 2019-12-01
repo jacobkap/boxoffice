@@ -17,10 +17,7 @@ fix_columns <- function(data) {
   data$movie       <- iconv(data$movie, "latin1", "ASCII", sub = "")
   data$distributor <- iconv(data$distributor, "latin1", "ASCII", sub = "")
 
-  # names(data) <- gsub("thtr", "theater", names(data))
-  # names(data) <- gsub("^change$", "percent_change", names(data))
   return(data)
-
 }
 
 numeric_cleaner <- function(x) {
@@ -33,7 +30,6 @@ numbers_site <- function(page){
   page <- rvest::html_nodes(page, paste0("#box_office_table"))
   page <- rvest::html_table(page)
   page <- page[[1]]
-
   # Last 2 rows are blank, removes the
   page <- page[1:(nrow(page) - 2), ]
 

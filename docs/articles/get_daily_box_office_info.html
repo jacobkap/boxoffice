@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">boxoffice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -97,7 +97,7 @@
 
     
     
-<p>The <code><a href="../reference/boxoffice.html">boxoffice()</a></code> function scrapes information about daily box office results of movies. It scrapes the webpages <a href="https://www.the-numbers.com/">https://www.the-numbers.com/</a> for this information. The data it returns are the following:</p>
+<p>The <code><a href="../reference/boxoffice.html">boxoffice()</a></code> function scrapes information about daily box office results of movies. It scrapes the webpage <a href="https://www.the-numbers.com/">https://www.the-numbers.com/</a> for this information. The data it returns are the following:</p>
 <ol style="list-style-type: decimal">
 <li>Movie name<br>
 </li>
@@ -135,6 +135,7 @@
 <a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 5         643   153858782   37 2015-10-31</span></a></code></pre></div>
 <p>There are two parameters for <code><a href="../reference/boxoffice.html">boxoffice()</a></code>: <code>dates</code> and <code>top_n</code>.</p>
 <p><code>dates</code> are simply an input dates (in Date format) that you want to get information on. In accepts either a single date or a vector of dates. All results are ordered in descending order by how much that movie made on that day. For example, the top selling movie of the day is the first value while the worst selling movie is the last value.</p>
+<p><code>top_n</code> gives only the top N highest grossing movies for that day. If you want only the top 10 movies that day (ranked by daily movie revenue), you would set <code>top_n</code> to 10.</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

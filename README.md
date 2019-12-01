@@ -12,8 +12,7 @@ Overview
 
 The goal of `boxoffice` is to scrape movie data to get information about
 daily box office results of movies and top grossing movies. It scrapes
-the webpages of either <https://www.boxofficemojo.com> or
-<https://www.the-numbers.com/> for this information.
+the webpages of <https://www.the-numbers.com/> for this information.
 
 Installation
 ------------
@@ -51,13 +50,13 @@ movies <- boxoffice::boxoffice(date = as.Date("2015-10-31"))
 head(movies)
 ```
 
-    ##                   movie      distributor   gross percent_change theaters
-    ## 1           The Martian 20th Century Fox 4564809             31     3218
-    ## 2       Bridge of Spies      Walt Disney 3588796             45     2873
-    ## 3            Goosebumps    Sony Pictures 3326075              9     3618
-    ## 4 The Last Witch Hunter        Lionsgate 2023321             36     3082
-    ## 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962
-    ## 6                 Burnt    Weinstein Co. 1733927             -5     3003
+    ##                   movie   distributor   gross percent_change theaters
+    ## 1           The Martian  20th Century 4564809             31     3218
+    ## 2       Bridge of Spies   Walt Disney 3588796             45     2873
+    ## 3            Goosebumps Sony Pictures 3326075              9     3618
+    ## 4 The Last Witch Hunter     Lionsgate 2023321             36     3082
+    ## 5  Hotel Transylvania 2 Sony Pictures 1905762              7     2962
+    ## 6                 Burnt Weinstein Co. 1733927             -5     3003
     ##   per_theater total_gross days       date
     ## 1        1419   179446657   30 2015-10-31
     ## 2        1249    43200132   16 2015-10-31
@@ -85,16 +84,16 @@ head(movies)
 ```
 
     ##   rank                                movie year_released
-    ## 2    1 Star Wars Ep. VII: The Force Awakens          2015
-    ## 3    2                               Avatar          2009
-    ## 4    3                        Black Panther          2018
-    ## 5    4               Avengers: Infinity War          2018
-    ## 6    5                              Titanic          1997
-    ## 7    6                       Jurassic World          2015
+    ## 1    1 Star Wars Ep. VII: The Force Awakens          2015
+    ## 2    2                    Avengers: Endgame          2019
+    ## 3    3                               Avatar          2009
+    ## 4    4                        Black Panther          2018
+    ## 5    5               Avengers: Infinity War          2018
+    ## 6    6                              Titanic          1997
     ##   american_box_office international_box_office total_box_office
-    ## 2           936662225               1116648995       2053311220
-    ## 3           760507625               2015837654       2776345279
-    ## 4           700059566                648198658       1348258224
-    ## 5           678815482               1369318718       2048134200
+    ## 1           936662225               1131561399       2068223624
+    ## 2           858373000               1939427564       2797800564
+    ## 3           760507625               2029197650       2789705275
+    ## 4           700059566                646853595       1346913161
+    ## 5           678815482               1369544272       2048359754
     ## 6           659363944               1548844451       2208208395
-    ## 7           652270625                996584239       1648854864

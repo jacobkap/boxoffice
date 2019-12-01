@@ -6,7 +6,7 @@
 #' 'worldwide' (domestic + international box office).
 #'
 #' @param ranks
-#' A vector of rankings you want it to return. For example.
+#' A vector of integers for the rankings you want it to return. For example.
 #' an input of 1:5 will return the top 5 grossing movies.
 #'
 #' @return
@@ -29,8 +29,7 @@ top_grossing <- function(type = "american",
   stopifnot(is.numeric(ranks) && is.character(type) && length(type) == 1)
   type <- tolower(type)
 
-  if (!type %in% c("american",
-                   "international", "worldwide")) {
+  if (!type %in% c("american", "international", "worldwide")) {
     stop(paste("type must be one of the following:",
                "'domestic' - Ranked by domestic gross (United States), all movies",
                "'internatonal' - Ranked by international gross, all movies",
@@ -60,6 +59,9 @@ top_grossing <- function(type = "american",
   }
   for (i in page_numbers) {
     temp       <- get_rank_data(url_start, i)
+    if (is.null(temp)) {
+      return(NULL)
+    }
     final_data <- rbind(final_data, temp)
   }
 
@@ -76,7 +78,8 @@ clean_top_grossing <- function(data, ranks) {
   names(data) <- gsub("^Released$",                "year_released", names(data))
   names(data) <- gsub("^Year$"    ,                "year_released", names(data))
   names(data) <- gsub("^Movie$",                   "movie", names(data))
-  names(data) <- gsub("^DomesticBox_Office$",      "american_box_office", names(data))
+  names(data) <- gsub("^DomesticBox_Office$",      "american_box_office",
+                      names(data))
   names(data) <- gsub("^InternationalBox_Office$",
                       "international_box_office", names(data))
   names(data) <- gsub("^WorldwideBox_Office$",
@@ -93,6 +96,7 @@ clean_top_grossing <- function(data, ranks) {
                    "american_box_office",
                    "international_box_office",
                    "total_box_office")]
+  rownames(data) <- 1:nrow(data)
   return(data)
 }
 
@@ -106,12 +110,11 @@ get_rank_data <- function(url, page_number) {
               httr::user_agent(useragent))
   }, error = function(e) {
     message(paste0(url, page_number, " could not be scraped. Please check ",
-                   "the website to make sure the date is available or ",
+                   "that the website is available or ",
                    "check your internet connection."))
     return(NULL)
   })
 
-#  page <- httr::GET(paste0(url, page_number), httr::user_agent(useragent))
   page <- httr::content(page, "parsed", encoding = "UTF-8")
   page <- rvest::html_nodes(page, "th , td")
   page <- rvest::html_text(page)

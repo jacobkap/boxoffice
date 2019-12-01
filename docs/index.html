@@ -12,8 +12,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Downloads Box Office Information for Given Dates">
 <meta property="og:description" content="Download daily box office information (how much each movie earned
-    in theaters) using data from either Box Office Mojo (&lt;http://www.boxofficemojo.com/&gt;) or
-   The Numbers (&lt;http://www.the-numbers.com/&gt;).">
+    in theaters) using data from The Numbers (&lt;http://www.the-numbers.com/&gt;).">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">boxoffice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -91,7 +90,7 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>The goal of <code>boxoffice</code> is to scrape movie data to get information about daily box office results of movies and top grossing movies. It scrapes the webpages of either <a href="https://www.boxofficemojo.com" class="uri">https://www.boxofficemojo.com</a> or <a href="https://www.the-numbers.com/" class="uri">https://www.the-numbers.com/</a> for this information.</p>
+<p>The goal of <code>boxoffice</code> is to scrape movie data to get information about daily box office results of movies and top grossing movies. It scrapes the webpages of <a href="https://www.the-numbers.com/" class="uri">https://www.the-numbers.com/</a> for this information.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -129,13 +128,13 @@
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/boxoffice/man/boxoffice.html">boxoffice</a></span>(<span class="dt">date =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2015-10-31"</span>))</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##                   movie      distributor   gross percent_change theaters</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1           The Martian 20th Century Fox 4564809             31     3218</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2       Bridge of Spies      Walt Disney 3588796             45     2873</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3            Goosebumps    Sony Pictures 3326075              9     3618</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 The Last Witch Hunter        Lionsgate 2023321             36     3082</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5  Hotel Transylvania 2    Sony Pictures 1905762              7     2962</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6                 Burnt    Weinstein Co. 1733927             -5     3003</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##                   movie   distributor   gross percent_change theaters</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1           The Martian  20th Century 4564809             31     3218</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2       Bridge of Spies   Walt Disney 3588796             45     2873</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3            Goosebumps Sony Pictures 3326075              9     3618</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 The Last Witch Hunter     Lionsgate 2023321             36     3082</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5  Hotel Transylvania 2 Sony Pictures 1905762              7     2962</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6                 Burnt Weinstein Co. 1733927             -5     3003</span></a>
 <a class="sourceLine" id="cb3-8" title="8"><span class="co">##   per_theater total_gross days       date</span></a>
 <a class="sourceLine" id="cb3-9" title="9"><span class="co">## 1        1419   179446657   30 2015-10-31</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="co">## 2        1249    43200132   16 2015-10-31</span></a>
@@ -155,19 +154,19 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">## Please note that these numbers are not adjusted for inflation.</span></a></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co">##   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co">## 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="co">## 3    2                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">## 4    3                        Black Panther          2018</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="co">## 5    4               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="co">## 6    5                              Titanic          1997</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="co">## 7    6                       Jurassic World          2015</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">## 1    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co">## 2    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co">## 3    3                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co">## 4    4                        Black Panther          2018</span></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="co">## 5    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">## 6    6                              Titanic          1997</span></a>
 <a class="sourceLine" id="cb7-8" title="8"><span class="co">##   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="co">## 2           936662225               1116648995       2053311220</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="co">## 3           760507625               2015837654       2776345279</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="co">## 4           700059566                648198658       1348258224</span></a>
-<a class="sourceLine" id="cb7-12" title="12"><span class="co">## 5           678815482               1369318718       2048134200</span></a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="co">## 6           659363944               1548844451       2208208395</span></a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="co">## 7           652270625                996584239       1648854864</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-9" title="9"><span class="co">## 1           936662225               1131561399       2068223624</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co">## 2           858373000               1939427564       2797800564</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="co">## 3           760507625               2029197650       2789705275</span></a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="co">## 4           700059566                646853595       1346913161</span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="co">## 5           678815482               1369544272       2048359754</span></a>
+<a class="sourceLine" id="cb7-14" title="14"><span class="co">## 6           659363944               1548844451       2208208395</span></a></code></pre></div>
 </div>
 
   </div>

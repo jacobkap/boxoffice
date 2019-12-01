@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">boxoffice</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -108,55 +108,55 @@
 <a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; 3    2                    Avengers: Endgame          2019</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; 4    3                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 5    4                        Black Panther          2018</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 6    5               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 7    6                              Titanic          1997</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt; 1    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co">#&gt; 2    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; 3    3                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; 4    4                        Black Panther          2018</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; 5    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; 6    6                              Titanic          1997</span></a>
 <a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 2           936662225               1131561399       2068223624</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 3           858373000               1939427564       2797800564</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; 4           760507625               2029197650       2789705275</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 5           700059566                646853595       1346913161</span></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 6           678815482               1369544272       2048359754</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; 7           659363944               1548844451       2208208395</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; 1           936662225               1131561399       2068223624</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; 2           858373000               1939427564       2797800564</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; 3           760507625               2029197650       2789705275</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; 4           700059566                646853595       1346913161</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 5           678815482               1369544272       2048359754</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; 6           659363944               1548844451       2208208395</span></a></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># International</span></a>
 <a class="sourceLine" id="cb2-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/boxoffice/man/top_grossing.html">top_grossing</a></span>(<span class="dt">type =</span> <span class="st">"international"</span>)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; 2    1                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; 3    2                    Avengers: Endgame          2019</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 4    3                              Titanic          1997</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 5    4               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 6    5                            Furious 7          2015</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 7    6 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; 1    1                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; 2    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 3    3                              Titanic          1997</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 4    4               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 5    5                            Furious 7          2015</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 6    6 Star Wars Ep. VII: The Force Awakens          2015</span></a>
 <a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 2           760507625               2029197650       2789705275</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 3           858373000               1939427564       2797800564</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 4           659363944               1548844451       2208208395</span></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; 5           678815482               1369544272       2048359754</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; 6           353007020               1165715774       1518722794</span></a>
-<a class="sourceLine" id="cb2-18" title="18"><span class="co">#&gt; 7           936662225               1131561399       2068223624</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; 1           760507625               2029197650       2789705275</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; 2           858373000               1939427564       2797800564</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 3           659363944               1548844451       2208208395</span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; 4           678815482               1369544272       2048359754</span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; 5           353007020               1165715774       1518722794</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="co">#&gt; 6           936662225               1131561399       2068223624</span></a></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Worldwide</span></a>
 <a class="sourceLine" id="cb3-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/boxoffice/man/top_grossing.html">top_grossing</a></span>(<span class="dt">type =</span> <span class="st">"worldwide"</span>)</a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; 2    1                    Avengers: Endgame          2019</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 3    2                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 4    3                              Titanic          1997</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 5    4 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 6    5               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; 7    6                        The Lion King          2019</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; 1    1                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 2    2                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 3    3                              Titanic          1997</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 4    4 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 5    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; 6    6                        The Lion King          2019</span></a>
 <a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 2           858373000               1939427564       2797800564</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 3           760507625               2029197650       2789705275</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 4           659363944               1548844451       2208208395</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 5           936662225               1131561399       2068223624</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 6           678815482               1369544272       2048359754</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 7           543617567               1111810064       1655427631</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 1           858373000               1939427564       2797800564</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 2           760507625               2029197650       2789705275</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 3           659363944               1548844451       2208208395</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 4           936662225               1131561399       2068223624</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 5           678815482               1369544272       2048359754</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 6           543624567               1111810064       1655434631</span></a></code></pre></div>
 </div>
 <div id="ranks" class="section level2">
 <h2 class="hasAnchor">
@@ -166,43 +166,43 @@
 <a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 3    2                    Avengers: Endgame          2019</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 4    3                               Avatar          2009</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 5    4                        Black Panther          2018</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 6    5               Avengers: Infinity War          2018</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; 7    6                              Titanic          1997</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; 1    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 2    2                    Avengers: Endgame          2019</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 3    3                               Avatar          2009</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 4    4                        Black Panther          2018</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 5    5               Avengers: Infinity War          2018</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; 6    6                              Titanic          1997</span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 2           936662225               1131561399       2068223624</span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 3           858373000               1939427564       2797800564</span></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 4           760507625               2029197650       2789705275</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 5           700059566                646853595       1346913161</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 6           678815482               1369544272       2048359754</span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 7           659363944               1548844451       2208208395</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 1           936662225               1131561399       2068223624</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 2           858373000               1939427564       2797800564</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 3           760507625               2029197650       2789705275</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 4           700059566                646853595       1346913161</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 5           678815482               1369544272       2048359754</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 6           659363944               1548844451       2208208395</span></a></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># </span></a>
 <a class="sourceLine" id="cb5-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/boxoffice/man/top_grossing.html">top_grossing</a></span>(<span class="dt">ranks =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;   rank                                movie year_released</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; 2    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; 1    1 Star Wars Ep. VII: The Force Awakens          2015</span></a>
 <a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; 2           936662225               1131561399       2068223624</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; 1           936662225               1131561399       2068223624</span></a></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Worldwide</span></a>
 <a class="sourceLine" id="cb6-2" title="2">movies &lt;-<span class="st"> </span>boxoffice<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/boxoffice/man/top_grossing.html">top_grossing</a></span>(<span class="dt">ranks =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1000</span>, <span class="dv">34</span>, <span class="dv">1</span>, <span class="dv">55</span>, <span class="dv">64</span>))</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; Please note that these numbers are not adjusted for inflation.</span></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(movies)</a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt;      rank                                 movie year_released</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="co">#&gt; 2       1  Star Wars Ep. VII: The Force Awakens          2015</span></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt; 35     34        Jumanji: Welcome to the Jungle          2017</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt; 56     55 The Lord of the Rings: The Two Towers          2002</span></a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt; 65     64    Batman v Superman: Dawn of Justice          2016</span></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt; 1019 1000                            Earthquake          1974</span></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt;      american_box_office international_box_office total_box_office</span></a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; 2              936662225               1131561399       2068223624</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; 35             404508916                559987277        964496193</span></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; 56             342548984                592150661        934699645</span></a>
-<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; 65             330360194                537140087        867500281</span></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 1019            79700000                       NA         79700000</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt;   rank                                 movie year_released</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="co">#&gt; 1    1  Star Wars Ep. VII: The Force Awakens          2015</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co">#&gt; 2   34        Jumanji: Welcome to the Jungle          2017</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="co">#&gt; 3   55 The Lord of the Rings: The Two Towers          2002</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt; 4   64    Batman v Superman: Dawn of Justice          2016</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="co">#&gt; 5 1000                            Earthquake          1974</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt;   american_box_office international_box_office total_box_office</span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="co">#&gt; 1           936662225               1131561399       2068223624</span></a>
+<a class="sourceLine" id="cb6-13" title="13"><span class="co">#&gt; 2           404508916                559987277        964496193</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="co">#&gt; 3           342548984                592150661        934699645</span></a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; 4           330360194                537140087        867500281</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="co">#&gt; 5            79700000                       NA         79700000</span></a></code></pre></div>
 </div>
   </div>
 
