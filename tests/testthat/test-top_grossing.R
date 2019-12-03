@@ -1,5 +1,7 @@
 context("top_grossing")
 
+# https://www.the-numbers.com/box-office-records/worldwide/all-movies/cumulative/all-time
+
 test_that("wrong inputs cause error", {
 
   expect_error(top_grossing(ranks = "a"))
@@ -174,19 +176,19 @@ test_that("Worldwide - top grossing columns have right values", {
                  2208208395,
                  2068223624,
                  2048359754,
-                 1655434631))
+                 1655988656))
   expect_equal(head(example_worldwide$american_box_office),
                c(858373000,
                  760507625,
                  659363944,
                  936662225,
                  678815482,
-                 543624567))
+                 543634365))
   expect_equal(head(example_worldwide$international_box_office),
                c(1939427564,
                  2029197650,
                  1548844451,
                  1131561399,
                  1369544272,
-                 1111810064))
+                 1112354291))
 })
