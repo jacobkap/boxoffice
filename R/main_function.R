@@ -32,7 +32,7 @@ boxoffice <- function(dates,
   }
 
 
-  if ( (!is.null(top_n) && length(top_n) != 1) ||
+  if ((!is.null(top_n) && length(top_n) != 1) ||
        (!is.null(top_n) && top_n <= 0) ) {
     stop("top_n must be a single, positive integer.")
   }
