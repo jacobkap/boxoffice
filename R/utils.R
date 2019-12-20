@@ -27,11 +27,9 @@ numeric_cleaner <- function(x) {
 }
 
 numbers_site <- function(page){
-  page <- rvest::html_nodes(page, paste0("#box_office_table"))
+  page <- rvest::html_nodes(page, paste0("#box_office_daily_table"))
   page <- rvest::html_table(page)
   page <- page[[1]]
-  # Last 2 rows are blank, removes the
-  page <- page[1:(nrow(page) - 2), ]
 
   return(page)
 }

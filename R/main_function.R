@@ -72,7 +72,7 @@ boxoffice <- function(dates,
       }
 
       # If no error but no data found
-      if (nrow(page) == 1 & all(sapply(page, is.na))) {
+      if (nrow(page) == 0 || nrow(page) == 1 & all(sapply(page, is.na))) {
         page <- NULL
         message(paste0("No results found for ", url_dates[i],
                        ". Please check the website to make ",
@@ -97,3 +97,4 @@ boxoffice <- function(dates,
   return(results)
 
 }
+
