@@ -33,7 +33,7 @@ boxoffice <- function(dates,
 
 
   if ((!is.null(top_n) && length(top_n) != 1) ||
-       (!is.null(top_n) && top_n <= 0) ) {
+      (!is.null(top_n) && top_n <= 0) ) {
     stop("top_n must be a single, positive integer.")
   }
 
@@ -72,7 +72,12 @@ boxoffice <- function(dates,
       }
 
       # If no error but no data found
-      if (nrow(page) == 0 || nrow(page) == 1 & all(sapply(page, is.na))) {
+      if (nrow(page) == 0 || nrow(page) == 1 & all(sapply(page, is.na)) ||
+          all(sapply(page[, c("distributor",
+                              "theaters",
+                              "per_theater",
+                              "total_gross",
+                              "days")], is.na))) {
         page <- NULL
         message(paste0("No results found for ", url_dates[i],
                        ". Please check the website to make ",
@@ -88,6 +93,7 @@ boxoffice <- function(dates,
   # Faster to use data.table's rbindlist but don't want the dependency
   results <- do.call(rbind, results)
   results <- as.data.frame(results)
+  results <- results[!is.na(results$days), ]
 
   if (nrow(results) == 0) {
     message(paste0("No results found. Please check the website to make ",

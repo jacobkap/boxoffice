@@ -26,6 +26,7 @@ Get the top N ranking grossing movies
 top_grossing()
 
 top_grossing(ranks = 1:5)
+top_grossing(ranks = 201:205)
 
 top_grossing(type = "international")
 top_grossing(type = "international", ranks = 1:10)

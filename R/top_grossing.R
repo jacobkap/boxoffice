@@ -19,6 +19,7 @@
 #' top_grossing()
 #'
 #' top_grossing(ranks = 1:5)
+#' top_grossing(ranks = 201:205)
 #'
 #' top_grossing(type = "international")
 #' top_grossing(type = "international", ranks = 1:10)
@@ -51,14 +52,14 @@ top_grossing <- function(type = "american",
   }
   url_start = paste0("https://www.the-numbers.com/box-office-records/",
                      type,
-                     "/cumulative/all-time/")
+                     "/cumulative/all-time")
   final_data  <- data.frame()
   page_numbers <- seq(min(ranks), max(ranks), 100)
   if (min(ranks) %% 100 == 0) {
     page_numbers <- c(page_numbers, max(ranks))
   }
   for (i in page_numbers) {
-    temp       <- get_rank_data(url_start, i)
+    temp <- get_rank_data(url_start, i, type = type)
     if (is.null(temp)) {
       return(NULL)
     }
@@ -101,9 +102,14 @@ clean_top_grossing <- function(data, ranks) {
 }
 
 
-get_rank_data <- function(url, page_number) {
+get_rank_data <- function(url, page_number, type) {
   useragent <- paste0("Mozilla/5.0 (compatible; a bot using the R boxoffice",
                       " package; https://github.com/jacobkap/boxoffice/)")
+  if (page_number == 1) {
+    page_number <- ""
+  } else {
+    page_number <- paste0("/", page_number)
+  }
 
   page <- tryCatch({
     httr::GET(paste0(url, page_number),
@@ -118,7 +124,12 @@ get_rank_data <- function(url, page_number) {
   page <- httr::content(page, "parsed", encoding = "UTF-8")
   page <- rvest::html_nodes(page, "th , td")
   page <- rvest::html_text(page)
-  dim(page) <- c(6, length(page) / 6)
+  if (type == "domestic/all-movies") {
+    dim(page) <- c(7, length(page) / 7)
+  } else {
+    dim(page) <- c(6, length(page) / 6)
+  }
+
   page <- t(page)
   page <- data.frame(page, stringsAsFactors = FALSE)
 

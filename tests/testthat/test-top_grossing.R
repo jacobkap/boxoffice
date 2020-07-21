@@ -99,16 +99,16 @@ test_that("Domestic - top grossing columns have right values", {
                                                     700059566,
                                                     678815482,
                                                     659363944))
-  expect_equal(head(example$international_box_office), c(1131561399,
+  expect_equal(head(example$international_box_office), c(1128815859,
                                                          1939427564,
-                                                         2029197650,
-                                                         646853595,
+                                                         2028193712,
+                                                         646043810,
                                                          1369544272,
                                                          1548844451))
-  expect_equal(head(example$total_box_office), c(2068223624,
+  expect_equal(head(example$total_box_office), c(2065478084,
                                                  2797800564,
-                                                 2789705275,
-                                                 1346913161,
+                                                 2788701337,
+                                                 1346103376,
                                                  2048359754,
                                                  2208208395))
 
@@ -131,12 +131,12 @@ test_that("International - top grossing columns have right values", {
                  "Furious 7",
                  "Star Wars Ep. VII: The Force Awakens"))
   expect_equal(head(example_international$international_box_office),
-               c(2029197650,
+               c(2028193712 	,
                  1939427564,
                  1548844451,
                  1369544272,
                  1165715774,
-                 1131561399))
+                 1128815859 	))
   expect_equal(head(example_international$american_box_office),
                c(760507625,
                  858373000 	,
@@ -145,12 +145,12 @@ test_that("International - top grossing columns have right values", {
                  353007020,
                  936662225))
   expect_equal(head(example_international$total_box_office),
-               c(2789705275,
+               c(2788701337,
                  2797800564,
                  2208208395,
                  2048359754,
                  1518722794,
-                 2068223624))
+                 2065478084))
 
 })
 
@@ -162,33 +162,33 @@ test_that("Worldwide - top grossing columns have right values", {
                                                         1997,
                                                         2015,
                                                         2018,
-                                                        2019))
+                                                        2015))
   expect_equal(head(example_worldwide$movie),
                c("Avengers: Endgame",
                  "Avatar",
                  "Titanic",
                  "Star Wars Ep. VII: The Force Awakens",
                  "Avengers: Infinity War",
-                 "The Lion King"))
+                 "Jurassic World"))
   expect_equal(head(example_worldwide$total_box_office),
                c(2797800564,
-                 2789705275,
+                 2788701337,
                  2208208395,
-                 2068223624,
+                 2065478084,
                  2048359754,
-                 1656313097))
+                 1670400637))
   expect_equal(head(example_worldwide$american_box_office),
                c(858373000,
                  760507625,
                  659363944,
                  936662225,
                  678815482,
-                 543638043))
+                 652270625))
   expect_equal(head(example_worldwide$international_box_office),
                c(1939427564,
-                 2029197650,
+                 2028193712,
                  1548844451,
-                 1131561399,
+                 1128815859,
                  1369544272,
-                 1112675054))
+                 1018130012))
 })

@@ -1,3 +1,7 @@
+# boxoffice 2.0.1
+
+* Misc bug fixes.
+
 # boxoffice 2.0.0
 
 * Removes ability to scrape boxofficemojo.com as this site requires their written permission for scraping. 
